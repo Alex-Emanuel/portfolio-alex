@@ -5,6 +5,8 @@
 
   --extra-bold: 800;
   --regular: 400;
+
+  color-scheme: dark;
 }
 
 html, body, p {
@@ -28,6 +30,26 @@ body {
   width: calc(100% - 40px);
   z-index: 50;
   overflow: hidden;
+}
+
+.frame {
+  background-color: var(--background-color);
+  border-radius: 20px;
+  margin: 20px;
+  padding: 0;
+  width: calc(100% - 40px);
+  height: calc(100dvh - 40px);
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.website-content {
+  flex: 1;
+  overflow-y: overlay;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Pre loader */
@@ -83,7 +105,7 @@ body {
 
 .orangebox {
   background-color: var(--primary-orange);
-  position:absolute;
+  position: absolute;
   bottom: 0;
   height: 0;
   width: 100%;
@@ -132,11 +154,4 @@ body {
   .dot {
     margin-left: -0.5rem;
   }
-}
-
-
-
-.test {
-  height: 100dvh;
-  background-color: gray;
 }

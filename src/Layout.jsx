@@ -3,6 +3,8 @@ import { useState, useRef } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from "@gsap/react";
 
+import Navbar from './components/navbar/navbar.jsx'
+
 const Layout = () => {
   const [loading, setLoading] = useState(true);
   const [counter, setCounter] = useState(1);
@@ -16,6 +18,8 @@ const Layout = () => {
   useGSAP(() => {
     if (!loading) return;
 
+    document.body.style.overflow = 'hidden';
+
     gsap.set('.website-content', { autoAlpha: 0 });
     gsap.set('.preloader', { autoAlpha: 1 });
 
@@ -26,7 +30,10 @@ const Layout = () => {
 
           gsap.timeline({
             defaults: { ease: "power2.inOut" },
-            onComplete: () => setLoading(false)
+            onComplete: () => { 
+              setLoading(false);
+              document.body.style.overflow = '';
+            }
           })
           .to(orangeBoxRef.current, { height: '100%', duration: 0.65 })
           .to('.preloader', { autoAlpha: 0, duration: 0.1 })
@@ -44,19 +51,23 @@ const Layout = () => {
   }, [loading], containerRef);
 
   return (
-    <div className='outside' ref={containerRef}>
+    <>
+    <div className='frame' ref={containerRef}>
       <div className='website-content'>
         {/* <Navbar /> */}
-        <div style={{ backgroundColor: "gray" }}>
+        <Navbar/>
+        <div>
           <Outlet />
         </div>
         {/* <Footer /> */}
         <ScrollRestoration />
       </div>
+    </div>
 
       {/* Preloader / Orangebox overlay */}
       {loading && (
         <>
+          <div className='outside' ref={containerRef}>
           <div ref={orangeBoxRef} className='orangebox'></div>
           <div className="preloader">
             <p>Alex Emanuel</p>
@@ -74,9 +85,10 @@ const Layout = () => {
               ></div>
             </div>
           </div>
+          </div>
         </>
       )}
-    </div>
+    </>
   );
 }
 

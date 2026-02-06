@@ -1,0 +1,36 @@
+.hero {
+  height: calc(100dvh - 40px);
+  width: calc(100% + 12px);
+  background-color: #7C1E22;
+  background-image:
+  radial-gradient(at 85% 15%, #FFA700 0px, transparent 60%),
+  radial-gradient(at 50% 10%, var(--primary-orange) 0px, transparent 70%),
+  radial-gradient(at 100% 60%, #631412 0px, transparent 50%),
+  radial-gradient(at 10% 40%, #7C1E22 0px, transparent 50%);
+  background-blend-mode: lighten;
+  border-radius: 20px 20px 20px 20px;
+  position: relative;
+}
+
+.hero img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    width: 100%;
+  }
+
+  .hero img {
+    display: none;
+  }
+}
+
+@media (max-width: 1100px) {
+  .hero img {
+    right: -150px;
+  }
+}

@@ -1,12 +1,10 @@
-import { Link } from 'react-router';
+import Hero from '../components/hero/hero.jsx'
 
 const Home = () => {
     return (
-        <div className='test'>
-            <p>Hello World</p>
-            <Link to='/contact' className="text-blue-600 underline">Contact</Link>
-            {/* <i className="fa-solid fa-image"></i> */}
-        </div>
+        <>
+        <Hero/>
+        </>
     )
 }
 
