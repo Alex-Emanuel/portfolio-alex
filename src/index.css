@@ -36,10 +36,14 @@ body {
 .preloader {
   border: 2px solid var(--primary-orange);
   border-radius: 20px;
-  height: 100%;
   box-sizing: border-box;
   padding: 20px;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
 }
 
 .orangify {
@@ -81,11 +85,11 @@ body {
   background-color: var(--primary-orange);
   position:absolute;
   bottom: 0;
-  height: 50%;
+  height: 0;
   width: 100%;
   z-index: 100;
-  opacity: 0;
 }
+
 
 /*Loading bar*/
 
@@ -122,9 +126,17 @@ body {
   .counter {
     font-size: 10rem;
     height: 11.5rem;
+    right: 10px;
   }
 
   .dot {
-    margin-left: -1.5rem;
+    margin-left: -0.5rem;
   }
+}
+
+
+
+.test {
+  height: 100dvh;
+  background-color: gray;
 }

@@ -1,63 +1,81 @@
 import { Outlet, ScrollRestoration } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useRef } from 'react';
+import { gsap } from 'gsap';
+import { useGSAP } from "@gsap/react";
 
 const Layout = () => {
   const [loading, setLoading] = useState(true);
   const [counter, setCounter] = useState(1);
 
-  // counter
-  useEffect(() => {
+  const orangeBoxRef = useRef(null);
+  const intervalRef = useRef(null);
+
+  const containerRef = useRef(null);
+
+  // pre loader animatie
+  useGSAP(() => {
     if (!loading) return;
-    const interval = setInterval(() => {
+
+    gsap.set('.website-content', { autoAlpha: 0 });
+    gsap.set('.preloader', { autoAlpha: 1 });
+
+    intervalRef.current = setInterval(() => {
       setCounter(prev => {
         if (prev >= 100) {
-          clearInterval(interval);
-          setLoading(false);
+          clearInterval(intervalRef.current);
+
+          gsap.timeline({
+            defaults: { ease: "power2.inOut" },
+            onComplete: () => setLoading(false)
+          })
+          .to(orangeBoxRef.current, { height: '100%', duration: 0.65 })
+          .to('.preloader', { autoAlpha: 0, duration: 0.1 })
+          .to('.website-content', { autoAlpha: 1, duration: 0.1 })
+          .to(orangeBoxRef.current, { height: 0, top: 0, bottom: 'auto', duration: 0.65 });
+
           return 100;
         }
         return prev + 1;
       });
     }, 35);
-    return () => clearInterval(interval);
-  }, [loading]);
 
-  if (loading) {
-    return (
-      <>
-      <div className='outside'>
-        <div className='orangebox'></div>
-        <div className="preloader">
-          {/* Tekst */}
-          <p>Alex Emanuel</p>
-          <p>
-            GRAPHIC DESIGNER <br/>
-            <span className='orangify'>✕</span> DEVELOPER <span className='orangify'>_</span>
-          </p>
-
-          {/* Counter */}
-          <p className='counter'>
-            {counter}<span className='dot orangify'>.</span>
-          </p>
-
-          {/* Loading bar */}
-          <div className="loading-bar-container">
-            <div
-              className="loading-bar"
-              style={{ width: `${counter}%` }}
-            ></div>
-          </div>
-        </div>
-      </div>
-      </>
-    );
-  }
+    // cleanup
+    return () => clearInterval(intervalRef.current);
+  }, [loading], containerRef);
 
   return (
-    <div className='outside'>
-      {/* <Navbar /> */}
-      <div style={{ "background-color": "gray" }}><Outlet /></div>
-      {/* <Footer /> */}
-      <ScrollRestoration />
+    <div className='outside' ref={containerRef}>
+      <div className='website-content'>
+        {/* <Navbar /> */}
+        <div style={{ backgroundColor: "gray" }}>
+          <Outlet />
+        </div>
+        {/* <Footer /> */}
+        <ScrollRestoration />
+      </div>
+
+      {/* Preloader / Orangebox overlay */}
+      {loading && (
+        <>
+          <div ref={orangeBoxRef} className='orangebox'></div>
+          <div className="preloader">
+            <p>Alex Emanuel</p>
+            <p>
+              GRAPHIC DESIGNER <br/>
+              <span className='orangify'>✕</span> DEVELOPER <span className='orangify'>_</span>
+            </p>
+            <p className='counter'>
+              {counter}<span className='dot orangify'>.</span>
+            </p>
+            <div className="loading-bar-container">
+              <div
+                className="loading-bar"
+                style={{ width: `${counter}%` }}
+              ></div>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 }
