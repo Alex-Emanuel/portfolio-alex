@@ -42,7 +42,7 @@ const Layout = () => {
 
           return 100;
         }
-        return prev + 1;
+        return prev + 3;
       });
     }, 35);
 

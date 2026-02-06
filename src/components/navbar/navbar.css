@@ -1,8 +1,19 @@
 .navbutton {
   position: fixed;
   right: 0;
-  z-index: 999;
+  z-index: 50;
   background-color: var(--background-color);
-  padding: 0 20px 20px 20px;
+  padding: 0.4rem 1.3rem 20px 20px;
   border-radius: 0 0px 20px 20px;
+}
+
+nav p.time {
+  position: fixed;
+  color: white;
+  z-index: 50;
+  right: 4.3rem;
+  margin-top: 7px;
+  font-size: 1.2rem;
+  text-align: right;
+  letter-spacing: 0.1rem;
 }
