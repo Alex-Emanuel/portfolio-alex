@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 import '../index.css';
 
 const pageVariants = {
@@ -8,6 +9,10 @@ const pageVariants = {
 };
 
 const NotFound = () => {
+  useEffect(() => {
+      document.title = "Alex Emanuel | Niet gevonden";
+    }, []);
+
   return (
     <motion.main
       variants={pageVariants}

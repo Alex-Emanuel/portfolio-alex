@@ -21,6 +21,14 @@
 
 @media (max-width: 768px) {
   .hero {
+    background-image:
+      radial-gradient(at 85% 15%, var(--primary-orange) 0px, transparent 60%),
+      radial-gradient(at 50% 10%, var(--primary-orange) 0px, transparent 70%),
+      radial-gradient(at 100% 60%, #631412 0px, transparent 50%),
+      radial-gradient(at 10% 40%, #7C1E22 0px, transparent 50%);
+  }
+
+  .hero {
     width: 100%;
   }
 

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 const pageVariants = {
     initial: { opacity: 0, y: 30 },
@@ -7,6 +8,10 @@ const pageVariants = {
 };
 
 const Contact = () => {
+  useEffect(() => {
+    document.title = "Alex Emanuel | Contact";
+  }, []);
+
   return (
     <motion.main
       variants={pageVariants}
