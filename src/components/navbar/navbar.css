@@ -25,6 +25,7 @@ nav {
   justify-content: center;
   align-items: center;
   gap: 6px;
+  padding-top: 8px;
 }
 
 .menu-line {
@@ -41,10 +42,18 @@ p.time {
   color: white;
   z-index: 90;
   right: 5rem;
-  margin-top: 7px;
+  margin-top: 10px;
   font-size: 1.2rem;
   text-align: right;
   letter-spacing: 0.1rem;
+}
+
+img.logo {
+  position: fixed;
+  z-index: 20;
+  left: 50px;
+  margin-top: 12px;
+  height: 35px;
 }
 
 .items {

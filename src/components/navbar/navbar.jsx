@@ -5,7 +5,7 @@ import gsap from 'gsap'
 
 import './navbar.css';
 
-const Navbar = ({buttonRef, timeRef, topLineRef, bottomLineRef}) => {
+const Navbar = ({buttonRef, timeRef, topLineRef, bottomLineRef, logoRef}) => {
   const [time, setTime] = useState('');
   const [isOpen, setIsOpen] = useState(false); 
 
@@ -95,6 +95,7 @@ const Navbar = ({buttonRef, timeRef, topLineRef, bottomLineRef}) => {
 
   return (
     <>
+    <img src='/alex-logo.png' className='logo' ref={logoRef}></img>
     <div className="navbutton" ref={buttonRef} onClick={toggleMenu}>
         <span class="menu-line" ref={topLineRef}></span>
         <span class="menu-line" ref={bottomLineRef}></span>
