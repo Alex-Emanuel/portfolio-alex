@@ -85,8 +85,7 @@ const Navbar = ({buttonRef, timeRef, topLineRef, bottomLineRef, logoRef}) => {
     if(isOpen) {
       tl.current.reverse();
       iconTl.current.reverse();
-    }
-    else {
+    } else {
       tl.current.play();
       iconTl.current.play();
     }

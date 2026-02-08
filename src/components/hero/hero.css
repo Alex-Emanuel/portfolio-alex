@@ -60,6 +60,8 @@
   color: white;
   text-align: left;
   width: 80px;
+  transition: ease-in-out;
+  transition-duration: 0.15s;
 }
 
 .socials i:hover {
@@ -80,6 +82,8 @@
   background-color: white;
   border-radius: 20px;
   padding: 5px;
+  transition: ease-in-out;
+  transition-duration: 0.15s;
 }
 
 .download:hover .social-arrow{
@@ -103,15 +107,61 @@
   width: 80px;
 }
 
+.blob {
+  width: 350px;
+  fill: var(--background-color);
+  position: absolute;
+  bottom: -19px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.scrollblob p {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 30;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-size: 0.7rem;
+}
+
+.scrollblob .arrows {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 30;
+}
+
+.scrollblob a {
+  color: white;
+  transition: ease-in-out;
+  transition-duration: 0.25s;
+}
+
+.scrollblob a:hover {
+  color: lightgray;
+  transition: ease-in-out;
+  transition-duration: 0.25s;
+}
+
+
+
+
+
+
+
 
 @media (max-width: 1350px) {
-  .hero img {
+  .hero img:first-of-type {
     right: -150px;
   }
 }
 
 @media (max-width: 1150px) {
-  .hero img {
+  .hero img:first-of-type {
     display: none;
   }
 
@@ -161,6 +211,19 @@
 }
 
 @media (max-width: 668px) {
+  .blob {
+    height: 80px;
+  }
+
+  .scrollblob p {
+    bottom: 28px;
+    font-size: 0.6rem;
+  }
+
+  .scrollblob .arrows {
+    bottom: -10px;
+  }
+
   .buttons {
     display: block;
   }

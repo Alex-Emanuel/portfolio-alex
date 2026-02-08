@@ -48,7 +48,7 @@ body {
 .website-content {
   flex: 1;
   display: relative;
-  overflow-y: overlay;
+  overflow-y: scroll;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
 }

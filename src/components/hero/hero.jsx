@@ -1,10 +1,45 @@
 import Button from '../button.jsx';
 import './hero.css';
-import { ArrowDownToLine } from 'lucide-react';
+import { ArrowDownToLine, ChevronsDown } from 'lucide-react';
 import { motion } from "framer-motion";
-
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
+import { Link } from 'react-router';
 
 const Hero = () => {
+    const blobRef = useRef(null);
+    const arrowsRef = useRef(null);
+    const scrollTextRef = useRef(null);
+
+    useGSAP(() => {
+        const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
+
+        tl.from(blobRef.current, {
+            y: 10,
+            opacity: 0,
+            duration: 0.8,
+            ease: "back.out(1.7)",
+        })
+        .from(
+            scrollTextRef.current,
+            { y: 10, opacity: 0, duration: 0.5 },
+            "<0.2" // overlap 0.2 sec
+        )
+        .from(
+            arrowsRef.current,
+            { y: 10, opacity: 0, duration: 0.5 },
+            "<0.2"
+        )
+        .to([scrollTextRef.current, arrowsRef.current], {
+            y: -10,
+            duration: 1.2,
+            ease: "sine.inOut",
+            repeat: -1,       // oneindig herhalen
+            yoyo: true,       // heen en weer
+        });
+    }, []);
+
     return (
         <div className='hero'>
             <div className="text-content">
@@ -70,6 +105,31 @@ const Hero = () => {
                 </div>
             </div>
             <img src='/me.png'></img>
+            
+            <div className="scrollblob">
+                <a href="#">
+                    <p ref={scrollTextRef}>scroll</p>
+                    <ChevronsDown
+                        ref={arrowsRef}
+                        size={34}
+                        strokeWidth={1}
+                        className="arrows"
+                    />
+                </a>
+                <svg
+                    ref={blobRef}
+                    className="blob"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 248.56 72.18"
+                >
+                    <g>
+                    <path
+                        className="cls-1"
+                        d="M248.56,59.03v13.15H0v-13.15s.92.03,2.58,0c10.75-.19,52.3-2.85,72.08-32.29,1.15-1.7,2.39-3.28,3.7-4.78C89.19,8.57,105.73,0,124.28,0s35.1,8.57,45.92,21.95c1.31,1.5,2.55,3.08,3.7,4.78,19.78,29.44,61.33,32.11,72.08,32.29,1.66.03,2.58,0,2.58,0Z"
+                    />
+                    </g>
+                </svg>
+            </div>
         </div>
     )
 }
