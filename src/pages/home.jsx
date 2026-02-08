@@ -1,14 +1,19 @@
 import Hero from '../components/hero/hero.jsx';
 import { motion } from "framer-motion";
+import { useEffect } from 'react';
 
 const pageVariants = {
-    initial: { opacity: 0, y: 30 },
+    initial: { opacity: 0 },
     animate: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: -30 }
+    exit: { opacity: 0 }
 };
 
 
 const Home = () => {
+  useEffect(() => {
+      document.title = "Alex Emanuel | Dev & Design";
+    }, []);
+
   return (
     <motion.main
       variants={pageVariants}

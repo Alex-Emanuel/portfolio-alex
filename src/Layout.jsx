@@ -14,6 +14,12 @@ const Layout = () => {
   const intervalRef = useRef(null);
   const containerRef = useRef(null);
 
+  const buttonRef = useRef(null);
+  const timeRef = useRef(null);
+  const topLineRef = useRef(null);
+  const bottomLineRef = useRef(null);
+  const logoRef = useRef(null);
+
   const location = useLocation();
 
   // pre loader animatie
@@ -22,7 +28,15 @@ const Layout = () => {
 
     document.body.style.overflow = 'hidden';
 
+    gsap.set(buttonRef.current, {
+      x: 50,
+      y: -50,
+    });
+    gsap.set(logoRef.current, {autoAlpha: 0 })
     gsap.set('.website-content', { autoAlpha: 0 });
+    gsap.set(bottomLineRef.current, { autoAlpha: 0 });
+    gsap.set(topLineRef.current, { autoAlpha: 0 });
+    gsap.set(timeRef.current, { x: 200 });
     gsap.set('.preloader', { autoAlpha: 1 });
 
     intervalRef.current = setInterval(() => {
@@ -40,7 +54,12 @@ const Layout = () => {
           .to(orangeBoxRef.current, { height: '100%', duration: 0.65 })
           .to('.preloader', { autoAlpha: 0, duration: 0.1 })
           .to('.website-content', { autoAlpha: 1, duration: 0.1 })
-          .to(orangeBoxRef.current, { height: 0, top: 0, bottom: 'auto', duration: 0.65 });
+          .to(orangeBoxRef.current, { height: 0, top: 0, bottom: 'auto', duration: 0.65 })
+          .to(logoRef.current, { y: 0, autoAlpha: 1, duration: 0.1 }, '<+0.45')
+          .to(buttonRef.current, { x: 0, y: 0, duration: 2 }, '<')
+          .to(topLineRef.current, { autoAlpha: 1 }, '<+1.2')
+          .to(bottomLineRef.current, { autoAlpha: 1 }, '<')
+          .to(timeRef.current, { x: 0, duration: 2 }, '<-0.6');
 
           return 100;
         }
@@ -57,13 +76,16 @@ const Layout = () => {
     <div className='frame' ref={containerRef}>
       <div className='website-content'>
         {/* <Navbar /> */}
-        <Navbar/>
+        <Navbar logoRef={logoRef} 
+                buttonRef={buttonRef} 
+                timeRef={timeRef} 
+                topLineRef={topLineRef} 
+                bottomLineRef={bottomLineRef}/>
+
         <AnimatePresence mode="wait">
           <Outlet key={location.pathname} />
         </AnimatePresence>
-        {/* <div>
-          <Outlet />
-        </div> */}
+
         {/* <Footer /> */}
         <ScrollRestoration />
       </div>

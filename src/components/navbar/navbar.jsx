@@ -1,21 +1,22 @@
-import { Link } from 'react-router';
+import { Link, useLocation } from 'react-router';
 import { useState, useEffect, useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap'
 
 import './navbar.css';
 
-const Navbar = () => {
+const Navbar = ({buttonRef, timeRef, topLineRef, bottomLineRef, logoRef}) => {
   const [time, setTime] = useState('');
   const [isOpen, setIsOpen] = useState(false); 
 
   const navRef = useRef(null);
   const linksRef = useRef([]);
-  const topLineRef = useRef(null);
-  const bottomLineRef = useRef(null);
   const phoneRef = useRef(null);
+  
   const tl = useRef(null);
   const iconTl = useRef(null);
+
+  const location = useLocation();
 
   useEffect(() => {
     const updateTime = () => {
@@ -94,11 +95,12 @@ const Navbar = () => {
 
   return (
     <>
-    <p className="time">{time}</p>
-    <div className="navbutton" onClick={toggleMenu}>
+    <img src='/alex-logo.png' className='logo' ref={logoRef}></img>
+    <div className="navbutton" ref={buttonRef} onClick={toggleMenu}>
         <span class="menu-line" ref={topLineRef}></span>
         <span class="menu-line" ref={bottomLineRef}></span>
     </div>
+    <p className="time" ref={timeRef}>{time}</p>
     <nav ref={navRef}>
       {/* list items */}
       <div className='items'>
@@ -107,12 +109,16 @@ const Navbar = () => {
           { label: "contact", href: "/contact" },
         ].map((item, index) => (
           <div key={index} ref={(el) => (linksRef.current[index] = el)}>
-            <Link to={item.href} className="li"
+            <Link 
+              to={item.href} 
+              className={`li ${location.pathname === item.href ? 'active' : ''}`}
               onClick={() => {
                 tl.current.reverse();
                 iconTl.current.reverse();
                 setIsOpen(false);
-              }}>
+              }}
+            >
+              {location.pathname === item.href && <span className="active-underscore">_</span>}
               {item.label}
             </Link>
           </div>

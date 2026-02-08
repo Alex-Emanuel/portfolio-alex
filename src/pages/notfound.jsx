@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect } from "react";
+import '../index.css';
 
 const pageVariants = {
     initial: { opacity: 0, y: 30 },
@@ -7,10 +8,10 @@ const pageVariants = {
     exit: { opacity: 0, y: -30 }
 };
 
-const Contact = () => {
+const NotFound = () => {
   useEffect(() => {
-    document.title = "Alex Emanuel | Contact";
-  }, []);
+      document.title = "Alex Emanuel | Niet gevonden";
+    }, []);
 
   return (
     <motion.main
@@ -20,12 +21,12 @@ const Contact = () => {
       exit="exit"
       transition={{ duration: 1, ease: "easeInOut" }}
     >
-    <div>
-      <h1 className="text-4xl mb-4">Pagina niet gevonden</h1>
-      <p>Er is geen pagina op deze url, probeer iets anders.</p>
+    <div className="notfound">
+      <h1>Pagina niet gevonden</h1>
+      <p>Er is geen pagina op deze url.</p>
     </div>
     </motion.main>
   );
 };
 
-export default Contact;
+export default NotFound;
