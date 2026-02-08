@@ -19,6 +19,54 @@
   height: 100%;
 }
 
+.text-content {
+  padding: 100px;
+  padding-top: 10rem;
+  font-size: 1.1rem;
+  letter-spacing: 0.1rem;
+}
+
+.text-content h1 {
+  font-weight: var(--extra-bold); /*extra bold*/
+  font-size: 3.4rem;
+  line-height: 3.6rem;
+  letter-spacing: 0.4rem;
+  margin-top: 20px;
+}
+
+.text-content .link-button:first-of-type {
+  margin-left: 4.3rem;
+}
+
+.text-content .link-button:last-of-type {
+  margin-left: 11rem;
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  position: absolute;
+  bottom: 80px;
+}
+
+.socials i {
+  font-size: 1.6rem;
+  color: white;
+  text-align: center;
+}
+
+.social-arrow {
+  width: 1.1rem;
+  height: 1.1rem;
+  stroke: #631412;
+  background-color: white;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+
 @media (max-width: 768px) {
   .hero {
     background-image:
