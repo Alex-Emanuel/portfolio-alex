@@ -42,22 +42,13 @@
   margin-left: 11rem;
 }
 
-.socials div:first-of-type {
+.socials div {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 18px;
   position: absolute;
   bottom: 78px;
-}
-
-.socials div:nth-of-type(2) {
-  display: flex;
-  flex-direction: column;
-  gap: 27px;
-  position: absolute;
-  bottom: 84px;
-  margin-left: 38px;
-  font-size: 1rem;
 }
 
 .socials div:nth-of-type(2) p:not(:last-of-type) {
@@ -67,8 +58,8 @@
 .socials i {
   font-size: 1.6rem;
   color: white;
-  text-align: center;
-  width: 12px;
+  text-align: left;
+  width: 80px;
 }
 
 .socials i:hover {
@@ -109,6 +100,7 @@
   gap: 6px;
   text-decoration: none;
   color: white;
+  width: 80px;
 }
 
 
