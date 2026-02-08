@@ -1,6 +1,6 @@
 .hero {
   height: calc(100dvh - 40px);
-  width: calc(100% + 12px);
+  width: calc(100%);
   background-color: #7C1E22;
   background-image:
   radial-gradient(at 85% 15%, #FFA700 0px, transparent 60%),
@@ -45,10 +45,9 @@
 .socials div:first-of-type {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  align-items: center;
+  gap: 18px;
   position: absolute;
-  bottom: 80px;
+  bottom: 78px;
 }
 
 .socials div:nth-of-type(2) {
@@ -56,7 +55,7 @@
   flex-direction: column;
   gap: 27px;
   position: absolute;
-  bottom: 83px;
+  bottom: 84px;
   margin-left: 38px;
   font-size: 1rem;
 }
@@ -69,6 +68,18 @@
   font-size: 1.6rem;
   color: white;
   text-align: center;
+  width: 12px;
+}
+
+.socials i:hover {
+  color: var(--primary-orange);
+  transition: ease-in-out;
+  transition-duration: 0.15s;
+}
+
+.socials a {
+  margin: 0;
+  padding: 0;
 }
 
 .social-arrow {
@@ -78,6 +89,26 @@
   background-color: white;
   border-radius: 20px;
   padding: 5px;
+}
+
+.download:hover .social-arrow{
+  background-color: var(--primary-orange);
+  transition: ease-in-out;
+  transition-duration: 0.15s;
+}
+
+.download:hover span {
+  color: var(--primary-orange);
+  transition: ease-in-out;
+  transition-duration: 0.15s;
+}
+
+.download {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: white;
 }
 
 
@@ -90,6 +121,10 @@
 @media (max-width: 1150px) {
   .hero img {
     display: none;
+  }
+
+  .hero {
+    height: 75dvh;
   }
 
   .text-content h1 {
@@ -110,16 +145,42 @@
   .text-content .link-button:last-of-type {
     margin-left: 0;
   }
+
+  .buttons {
+    display: flex;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 1150px) and (min-height: 1150px) {
+  .hero {
+    height: 50dvh;
+  }
+}
+
+@media (max-height: 740px) {
+  .text-content .link-button:first-of-type {
+    display: none;
+  }
+
+  .text-content .link-button:last-of-type {
+    display: none;
+  }
 }
 
 @media (max-width: 668px) {
-  .hero {
-    width: 100%;
+  .buttons {
+    display: block;
   }
 
+  .hero {
+    width: 100%;
+    height: 75dvh;
+  }
+  
   .text-content h1 {
-    font-size: 1.9rem;
-    line-height: 2.1rem;
+    font-size: 1.8rem;
+    line-height: 2rem;
     margin-top: 16px;
     margin-bottom: 36px;
   }

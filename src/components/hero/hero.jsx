@@ -11,20 +11,21 @@ const Hero = () => {
                 GRAPHIC DESIGNER <br/>
                 <span className='orangify'>✕</span> DEVELOPER <span className='orangify'>_</span>
                 </h1>
+                <div className='buttons'>
                 <Button naam="Leer mij kennen" href="#"/>
                 <Button naam="Projecten" href="#"/>
+                </div>
 
                 <div className='socials'>
                     <div>
-                        <i class="fa-brands fa-linkedin"></i>
-                        <i class="fa-brands fa-github"></i>
-                        <ArrowDownToLine strokeWidth={3} className="social-arrow"/>
+                        <a target='blank' href="https://www.linkedin.com/in/alex-emanuel/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a target='blank' href="https://github.com/Alex-Emanuel"><i class="fa-brands fa-github"></i></a>
+                        <a className='download' href="/cv-alex-emanuel.pdf" download><ArrowDownToLine strokeWidth={3} className="social-arrow"/> <span>CV</span></a>
                     </div>
-                    <div>
+                    {/* <div>
                         <p>@alex-emanuel</p>
                         <p>@Alex-Emanuel</p>
-                        <p>CV</p>
-                    </div>
+                    </div> */}
                 </div>
             </div>
             <img src='/me.png'></img>
