@@ -39,7 +39,7 @@ nav {
 p.time {
   position: fixed;
   color: white;
-  z-index: 300;
+  z-index: 90;
   right: 5rem;
   margin-top: 7px;
   font-size: 1.2rem;
@@ -96,6 +96,14 @@ nav>a {
 
 nav>a:hover {
   border-bottom: 2px var(--primary-orange) solid;
+}
+
+.li.active {
+  font-weight: bold;
+}
+/* eerste karakter */
+.active-underscore {
+  color: var(--primary-orange);      /* voorbeeld kleur */
 }
 
 /* MOBIEL */
