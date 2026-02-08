@@ -1,7 +1,8 @@
-import { Outlet, ScrollRestoration } from 'react-router-dom';
+import { Outlet, ScrollRestoration, useLocation } from 'react-router-dom';
 import { useState, useRef } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from "@gsap/react";
+import { AnimatePresence } from "framer-motion";
 
 import Navbar from './components/navbar/navbar.jsx'
 
@@ -11,8 +12,9 @@ const Layout = () => {
 
   const orangeBoxRef = useRef(null);
   const intervalRef = useRef(null);
-
   const containerRef = useRef(null);
+
+  const location = useLocation();
 
   // pre loader animatie
   useGSAP(() => {
@@ -56,9 +58,12 @@ const Layout = () => {
       <div className='website-content'>
         {/* <Navbar /> */}
         <Navbar/>
-        <div>
+        <AnimatePresence mode="wait">
+          <Outlet key={location.pathname} />
+        </AnimatePresence>
+        {/* <div>
           <Outlet />
-        </div>
+        </div> */}
         {/* <Footer /> */}
         <ScrollRestoration />
       </div>
