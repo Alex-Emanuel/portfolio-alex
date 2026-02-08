@@ -6,6 +6,7 @@ import { RouterProvider } from 'react-router/dom';
 import Layout from './Layout.jsx'
 import Home from './pages/home.jsx'
 import Contact from './pages/contact.jsx'; 
+import NotFound from './pages/notfound.jsx'; 
 
 import './index.css'
 
@@ -15,6 +16,7 @@ const router = createBrowserRouter([
     children: [
       { path: '/', Component: Home},
       { path: '/contact', Component: Contact},
+      { path: '*', Component: NotFound}
     ]
   },
 ]);

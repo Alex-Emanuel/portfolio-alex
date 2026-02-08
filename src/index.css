@@ -53,6 +53,20 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
+
+/* NOTFOUND */
+/* ======== */
+
+.notfound {
+  padding: 20px;
+  background-color: rgb(30, 30, 30);
+  height: calc(100dvh - 80px);
+}
+
+.notfound h1 {
+  margin-top: 4rem;
+}
+
 /* Pre loader */
 /* ========== */
 

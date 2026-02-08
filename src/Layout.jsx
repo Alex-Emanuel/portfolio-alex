@@ -54,9 +54,9 @@ const Layout = () => {
           .to('.website-content', { autoAlpha: 1, duration: 0.1 })
           .to(orangeBoxRef.current, { height: 0, top: 0, bottom: 'auto', duration: 0.65 })
           .to(buttonRef.current, { x: 0, y: 0, duration: 2 }, '<')
-          .to(topLineRef.current, { autoAlpha: 1 }, '<+1.5')
+          .to(topLineRef.current, { autoAlpha: 1 }, '<+1.2')
           .to(bottomLineRef.current, { autoAlpha: 1 }, '<')
-          .to(timeRef.current, { x: 0, duration: 2 }, '<-0.5');
+          .to(timeRef.current, { x: 0, duration: 2 }, '<-0.6');
 
           return 100;
         }
