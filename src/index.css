@@ -47,6 +47,7 @@ body {
 
 .website-content {
   flex: 1;
+  display: relative;
   overflow-y: overlay;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
@@ -109,9 +110,8 @@ body {
   bottom: 0;
   height: 0;
   width: 100%;
-  z-index: 100;
+  z-index: 800;
 }
-
 
 /*Loading bar*/
 

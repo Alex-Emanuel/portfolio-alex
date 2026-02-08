@@ -64,10 +64,10 @@ const Layout = () => {
       </div>
     </div>
 
-      {/* Preloader / Orangebox overlay */}
-      {loading && (
-        <>
-          <div className='outside' ref={containerRef}>
+    {/* Preloader / Orangebox overlay */}
+    {loading && (
+      <>
+        <div className='outside' ref={containerRef}>
           <div ref={orangeBoxRef} className='orangebox'></div>
           <div className="preloader">
             <p>Alex Emanuel</p>
@@ -85,9 +85,9 @@ const Layout = () => {
               ></div>
             </div>
           </div>
-          </div>
-        </>
-      )}
+        </div>
+      </>
+    )}
     </>
   );
 }
