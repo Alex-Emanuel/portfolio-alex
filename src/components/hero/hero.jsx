@@ -15,9 +15,16 @@ const Hero = () => {
                 <Button naam="Projecten" href="#"/>
 
                 <div className='socials'>
-                    <i class="fa-brands fa-linkedin"></i>
-                    <i class="fa-brands fa-github"></i>
-                    <ArrowDownToLine strokeWidth={3} className="social-arrow"/>
+                    <div>
+                        <i class="fa-brands fa-linkedin"></i>
+                        <i class="fa-brands fa-github"></i>
+                        <ArrowDownToLine strokeWidth={3} className="social-arrow"/>
+                    </div>
+                    <div>
+                        <p>@alex-emanuel</p>
+                        <p>@Alex-Emanuel</p>
+                        <p>CV</p>
+                    </div>
                 </div>
             </div>
             <img src='/me.png'></img>
