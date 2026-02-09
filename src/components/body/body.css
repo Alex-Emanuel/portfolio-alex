@@ -55,11 +55,12 @@ div.content-body.ervaring h4, div.content-body.ervaring h2 {
   text-align: left;
 }
 
-div.content-body.ervaring .studie {
+div.content-body.ervaring .studie, div.content-body.ervaring .werkervaring {
   margin-top: 4rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
+  letter-spacing: 0.05rem;
 }
 
 div.content-body.ervaring h4 {
@@ -68,6 +69,10 @@ div.content-body.ervaring h4 {
 
 div.content-body.ervaring h2 {
   margin-bottom: 0px;
+}
+
+div.content-body.ervaring .werkervaring p:nth-of-type(4) {
+  line-height: 2rem;
 }
 
 div.title-buttons {

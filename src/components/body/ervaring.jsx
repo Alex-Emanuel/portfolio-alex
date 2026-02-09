@@ -5,6 +5,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Summation from '../summation';
 import data from '../../assets/data/opleiding.json';
+import dataErvaring from '../../assets/data/ervaring.json';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -48,7 +49,15 @@ const Ervaring = () => {
         {data.map((studie, index) => (
           <Summation
             key={index}
-            studie={studie}
+            onderdeel={studie}
+          />
+        ))}
+      </div>
+      <div className='werkervaring'>
+        {dataErvaring.map((werk, index) => (
+          <Summation
+            key={index}
+            onderdeel={werk}
           />
         ))}
       </div>

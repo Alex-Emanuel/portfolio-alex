@@ -4,16 +4,16 @@ import { gsap } from "gsap";
 
 gsap.registerPlugin(ScrollToPlugin);
 
-const Summation = ({ studie }) => {
-  const { datum, opleiding, type, locatie, specialisatie, extra } = studie;
+const Summation = ({ onderdeel }) => {
+  const { datum, titel, subtitel, uitleg, specialisatie, extra } = onderdeel;
 
   return (
     <div className="summation">
       <div className="bolletje"></div>
       <p>{datum}</p>
-      <p>{opleiding}</p>
-      <p>{type}</p>
-      <p>{locatie}</p>
+      <p>{titel}</p>
+      <p>{subtitel}</p>
+      <p>{uitleg}</p>
       {specialisatie && <p>{specialisatie}</p>}
       {extra && <p className='extra'>{extra}</p>}
     </div>
