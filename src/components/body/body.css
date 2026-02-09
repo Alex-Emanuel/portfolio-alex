@@ -118,6 +118,42 @@ button.inactive:hover {
   color: var(--background-color);
 }
 
+/*VAARDIGHEDEN*/
+/*============*/
+
+.vaardigheden h3 {
+  text-transform: uppercase;
+}
+
+.vaardigheid-chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: var(--primary-orange);
+  width: fit-content;
+  padding: 10px;
+  border-radius: 0.6rem;
+  color: var(--background-color);
+  font-weight: bold;
+  letter-spacing: 0.05rem;
+}
+
+.skill-icon {
+  height: 20px;
+}
+
+.vaardigheden-lijst {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.vaardigheid-groep { 
+  margin-bottom: 3rem;
+}
+
+
 /*RESPONSIVE*/
 /*==========*/
 @media (max-width: 1150px) {

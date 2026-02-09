@@ -83,7 +83,7 @@ const Ervaring = () => {
     <div className='content-body ervaring' ref={containerRef}>
       <div className='title-buttons'>
         <div>
-          <h4 id='me'>Studies × werk</h4>
+          <h4>Studies × werk</h4>
           <h2>Ervaring</h2>
         </div>
         <div>

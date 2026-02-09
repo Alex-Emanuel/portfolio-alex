@@ -3,13 +3,13 @@ import Me from '../components/body/me.jsx';
 import { motion } from "framer-motion";
 import { useEffect } from 'react';
 import Ervaring from '../components/body/ervaring.jsx';
+import Vaardigheden from '../components/body/vaardigheden.jsx';
 
 const pageVariants = {
     initial: { opacity: 0 },
     animate: { opacity: 1, y: 0 },
     exit: { opacity: 0 }
 };
-
 
 const Home = () => {
   useEffect(() => {
@@ -27,6 +27,7 @@ const Home = () => {
       <Hero />
       <Me />
       <Ervaring />
+      <Vaardigheden />
     </motion.main>
   )
 }
