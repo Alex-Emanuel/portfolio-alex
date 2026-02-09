@@ -6,6 +6,7 @@ import { AnimatePresence } from "framer-motion";
 import Lenis from '@studio-freight/lenis';
 
 import Navbar from './components/navbar/navbar.jsx'
+import ScrollIndicator from './components/scrollindicator.jsx'
 
 const Layout = () => {
   const [loading, setLoading] = useState(true);
@@ -30,7 +31,6 @@ const Layout = () => {
     if (!loading) return;
 
     document.body.style.overflow = 'hidden';
-    gsap.set('.website-content', { overflow: 'hidden' });
 
     gsap.set(buttonRef.current, {
       x: 50,
@@ -123,7 +123,9 @@ const Layout = () => {
         {/* <Footer /> */}
         <ScrollRestoration />
       </div>
+      
     </div>
+    <ScrollIndicator />
 
     {/* Preloader / Orangebox overlay */}
     {loading && (

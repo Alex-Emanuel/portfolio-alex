@@ -48,10 +48,42 @@ body {
 .website-content {
   flex: 1;
   display: relative;
-  overflow-y: auto;
+  overflow-y: hidden;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
 }
+
+/* Scroll */
+/* ====== */
+
+.scroll-indicator {
+  position: fixed;
+  top: 0;
+  right: 0px;
+  width: 4px;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  z-index: 9999;
+}
+
+.scroll-indicator__bar {
+  width: 100%;
+  height: 0%;
+  background: var(--primary-orange);
+  border-radius: 2px;
+  transform-origin: top;
+}
+
+.scroll-indicator {
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.scroll-indicator:hover {
+  opacity: 1;
+}
+
 
 /* Button */
 /* ====== */
