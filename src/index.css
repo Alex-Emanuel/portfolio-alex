@@ -49,9 +49,26 @@ body {
 .website-content {
   flex: 1;
   display: block;
-  overflow-y: hidden;
+  overflow-y: auto;
   overflow-x: hidden;
+  /* Firefox */
+  scrollbar-width: thin;          /* dunne scrollbar */
+  scrollbar-color: transparent transparent;
   -webkit-overflow-scrolling: touch;
+}
+
+/* Chrome, Safari, Edge */
+.website-content::-webkit-scrollbar {
+  width: 8px;  /* nog steeds aanwezig */
+}
+
+.website-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.website-content::-webkit-scrollbar-thumb {
+  background: transparent;  /* thumb transparant */
+  border-radius: 4px;
 }
 
 /* Scroll */
