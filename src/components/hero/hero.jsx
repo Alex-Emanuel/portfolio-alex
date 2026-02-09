@@ -29,16 +29,25 @@ const Hero = () => {
       ease: "power3.inOut",
     });
   };
-
+  
   useGSAP(() => {
     const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
 
+    // Hero tekst
+    tl.from(textRef.current, {
+      opacity: 0,
+      y: 50,
+      duration: 1
+    });
+
+    // Scrollblob
     tl.from(blobRef.current, {
       y: 10,
       opacity: 0,
       duration: 0.8,
       ease: "back.out(1.7)",
-    })
+    }, "<0.2")
+
     .from(scrollTextRef.current, { y: 10, opacity: 0, duration: 0.5 }, "<0.2")
     .from(arrowsRef.current, { y: 10, opacity: 0, duration: 0.5 }, "<0.2")
     .to([scrollTextRef.current, arrowsRef.current], {
@@ -66,16 +75,6 @@ const Hero = () => {
     container.addEventListener("scroll", onScroll);
     return () => container.removeEventListener("scroll", onScroll);
   }, [opacity, y]);
-
-  useGSAP(() => {
-    // Entrance animatie bij pagina load
-    gsap.from(textRef.current, {
-      opacity: 0,
-      y: 50,
-      duration: 1,
-      ease: "power2.out"
-    });
-  }, []);
 
   return (
     <div className='hero' ref={containerRef}>
