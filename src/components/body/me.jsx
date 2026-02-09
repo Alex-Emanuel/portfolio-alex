@@ -13,7 +13,6 @@ const Me = () => {
   useGSAP(() => {
     if (!containerRef.current || !imgRef.current) return;
 
-    // Timeline voor tekst + h4/h2/p
     gsap.fromTo(containerRef.current.querySelectorAll("h4, h2, p"),
       { opacity: 0, y: 50 },
       { 
@@ -21,7 +20,7 @@ const Me = () => {
         y: 0,
         duration: 1,
         ease: "power2.out",
-        stagger: 0.2, // elk element iets na elkaar
+        stagger: 0.2,
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top 90%",
@@ -32,7 +31,6 @@ const Me = () => {
       }
     );
 
-    // Afbeelding apart
     gsap.fromTo(imgRef.current,
       { opacity: 0, y: 50, scale: 0.95 },
       {
@@ -43,7 +41,7 @@ const Me = () => {
         ease: "power2.out",
         scrollTrigger: {
           trigger: imgRef.current,
-          start: "top 95%", // start iets later of eerder dan tekst
+          start: "top 95%",
           end: "top 50%",
           scrub: true,
           scroller: ".website-content",

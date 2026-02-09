@@ -1,5 +1,12 @@
+/*ALGEMEEN*/
+/*========*/
 div.content-body {
   padding: 100px;
+}
+
+div.content-body.ervaring {
+  background-color: var(--reg-gray);
+  border-radius: 20px;
 }
 
 h4, h2 {
@@ -42,6 +49,56 @@ h2 {
   margin-top: 3rem;
 }
 
+/*ERVARING*/
+/*========*/
+div.content-body.ervaring h4, div.content-body.ervaring h2 {
+  text-align: left;
+}
+
+div.content-body.ervaring .studie {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+div.content-body.ervaring h4 {
+  padding-top: 0px;
+}
+
+div.content-body.ervaring h2 {
+  margin-bottom: 0px;
+}
+
+div.title-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.title-buttons > div:nth-child(2) {
+  display: flex;
+  gap: 10px;
+}
+
+button.inactive {
+  background-color: var(--reg-gray);
+  color: var(--primary-orange);
+}
+
+button {
+  background-color: var(--primary-orange);
+  color: var(--background-color);
+  border: 2px solid var(--primary-orange);
+  border-radius: 16px;
+  padding: 0.8rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
+  font-weight: 800;
+}
+
+/*RESPONSIVE*/
+/*==========*/
 @media (max-width: 1150px) {
   .maxwidthcontent {
     width: 100%;

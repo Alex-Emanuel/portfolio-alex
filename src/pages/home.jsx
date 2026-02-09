@@ -2,6 +2,7 @@ import Hero from '../components/hero/hero.jsx';
 import Me from '../components/body/me.jsx';
 import { motion } from "framer-motion";
 import { useEffect } from 'react';
+import Ervaring from '../components/body/ervaring.jsx';
 
 const pageVariants = {
     initial: { opacity: 0 },
@@ -25,6 +26,7 @@ const Home = () => {
     >
       <Hero />
       <Me />
+      <Ervaring />
     </motion.main>
   )
 }

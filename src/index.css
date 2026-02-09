@@ -2,6 +2,7 @@
   --primary-orange: #FF5400;   /* Oranje */
   --background-color: #141412; /* Achtergrondkleur */
   --text-color: #B7CAD4;       /* Tekstkleur */
+  --reg-gray: #181818;
 
   --extra-bold: 800;
   --regular: 400;
@@ -191,6 +192,44 @@ body {
   background-color: var(--primary-orange);
   border-radius: 5px;
   transition: width 0.02s ease-in-out;
+}
+
+/* SUMMATION COMPONENT */
+/* =================== */
+
+.summation {
+  color: var(--text-color);
+  position: relative;
+  padding-left: 20px;
+  padding-top: 1px;
+}
+
+.summation .bolletje {
+  width: 10px;
+  height: 20px;
+  left: 0;
+  top: 0;
+  background-color: var(--primary-orange);
+  border-radius: 20px;
+  position: absolute;
+}
+
+.summation p {
+  margin-bottom: 0.8rem;
+}
+
+.summation p:nth-of-type(2) {
+  color: white;
+  font-weight: 700;
+}
+
+.summation p:nth-of-type(3) {
+  color: white;
+  margin-bottom: 1.8rem;
+}
+
+.summation p.extra {
+  font-style: italic;
 }
 
 /* MOBIEL */
