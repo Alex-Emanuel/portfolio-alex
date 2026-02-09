@@ -121,6 +121,10 @@ button.inactive:hover {
 /*VAARDIGHEDEN*/
 /*============*/
 
+.skills {
+  padding-bottom: 3rem !important;
+}
+
 .vaardigheden h3 {
   text-transform: uppercase;
   letter-spacing: 0.1rem;
@@ -158,6 +162,38 @@ button.inactive:hover {
   margin-bottom: 3rem;
 }
 
+/*PROJECTEN*/
+/*=========*/
+
+.content-body.projecten {
+  padding-top: 0px;
+}
+
+.content-body.projecten h4, .content-body.projecten h2 {
+  text-align: left;
+}
+
+.projectgrid {
+  width: 100%;
+  height: 90dvh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 20px;
+  grid-template-areas:
+    "A A B"
+    "A A C"
+    "D E F";
+}
+
+.projectgrid > div {
+  background-color: var(--primary-orange);
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 
 /*RESPONSIVE*/
 /*==========*/
@@ -173,9 +209,35 @@ button.inactive:hover {
   div.content-body.ervaring .studie, div.content-body.ervaring .werkervaring {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .projectgrid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "A B"
+      "C D"
+      "E F";
+  }
 }
 
 @media (max-width: 668px) {
+  .projectgrid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    height: fit-content;
+    grid-template-areas:
+      "A"
+      "B"
+      "C"
+      "D"
+      "E"
+      "F";
+  }
+
+  .projectgrid > div {
+    height: 50dvw;
+  }
+
   div.title-buttons {
     flex-direction: column;
     gap: 2rem;

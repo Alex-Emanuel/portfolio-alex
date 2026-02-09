@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useEffect } from 'react';
 import Ervaring from '../components/body/ervaring.jsx';
 import Vaardigheden from '../components/body/vaardigheden.jsx';
+import Projecten from '../components/body/projecten.jsx';
 
 const pageVariants = {
     initial: { opacity: 0 },
@@ -28,6 +29,7 @@ const Home = () => {
       <Me />
       <Ervaring />
       <Vaardigheden />
+      <Projecten />
     </motion.main>
   )
 }

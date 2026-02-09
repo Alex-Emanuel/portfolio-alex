@@ -60,7 +60,7 @@ const Vaardigheden = () => {
   }, []);
 
   return (
-    <div className='content-body' ref={containerRef}>
+    <div className='content-body skills' ref={containerRef}>
       <h4>Waarmee ik u kan helpen</h4>
       <h2>Vaardigheden</h2>
       <section className="vaardigheden maxwidthcontent">
