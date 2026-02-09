@@ -87,15 +87,6 @@ const Ervaring = () => {
         </div>
         <div>
           <motion.button
-            className={activeTab === 'opleiding' ? '' : 'inactive'}
-            onClick={() => switchTab('opleiding')}
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.97 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-            Opleiding
-          </motion.button>
-          <motion.button
             className={activeTab === 'werkervaring' ? '' : 'inactive'}
             onClick={() => switchTab('werkervaring')}
             whileHover={{ scale: 1.05, y: -2 }}
@@ -103,6 +94,15 @@ const Ervaring = () => {
             transition={{ type: "spring", stiffness: 300 }}
           >
             Werkervaring
+          </motion.button>
+          <motion.button
+            className={activeTab === 'opleiding' ? '' : 'inactive'}
+            onClick={() => switchTab('opleiding')}
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
+            Opleiding
           </motion.button>
         </div>
       </div>
