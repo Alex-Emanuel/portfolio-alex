@@ -3,9 +3,10 @@ import { useRef, useState } from 'react';
 import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
 import Summation from '../summation';
-import data from '../../assets/data/opleiding.json';
-import dataErvaring from '../../assets/data/ervaring.json';
 import { motion } from "framer-motion";
+
+import opleiding from '../../assets/data/opleiding.js';
+import werkervaring from '../../assets/data/ervaring.js';
 
 const Ervaring = () => {
   const containerRef = useRef(null);
@@ -109,14 +110,14 @@ const Ervaring = () => {
 
       <div className='studie' ref={itemsRef}>
         {renderedTab === 'opleiding' &&
-          data.map((studie, index) => (
-            <Summation key={index} onderdeel={studie} />
+          opleiding.map((item) => (
+            <Summation key={item.id} onderdeel={item} />
           ))
         }
 
         {renderedTab === 'werkervaring' &&
-          dataErvaring.map((werk, index) => (
-            <Summation key={index} onderdeel={werk} />
+          werkervaring.map((item) => (
+            <Summation key={item.id} onderdeel={item} />
           ))
         }
       </div>
