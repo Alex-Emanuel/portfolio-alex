@@ -172,7 +172,9 @@
 
 @media (max-width: 1350px) {
   .hero img:first-of-type {
-    right: -150px;
+    object-position: left;
+    width: 50%;
+    object-fit: cover;
   }
 }
 

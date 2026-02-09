@@ -48,7 +48,7 @@ body {
 
 .website-content {
   flex: 1;
-  display: relative;
+  display: block;
   overflow-y: hidden;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
@@ -208,14 +208,10 @@ body {
   width: 10px;
   height: 20px;
   left: 0;
-  top: 0;
+  top: 5px;
   background-color: var(--primary-orange);
   border-radius: 20px;
   position: absolute;
-}
-
-.summation p {
-  margin-bottom: 0.8rem;
 }
 
 .summation p:nth-of-type(2) {
@@ -225,7 +221,7 @@ body {
 
 .summation p:nth-of-type(3) {
   color: white;
-  margin-bottom: 1.8rem;
+  margin-bottom: 1rem;
 }
 
 .summation p.extra {

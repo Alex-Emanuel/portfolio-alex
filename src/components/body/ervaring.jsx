@@ -10,8 +10,8 @@ import { motion } from "framer-motion";
 const Ervaring = () => {
   const containerRef = useRef(null);
   const itemsRef = useRef(null);
-  const [activeTab, setActiveTab] = useState('opleiding');
-  const [renderedTab, setRenderedTab] = useState('opleiding');
+  const [activeTab, setActiveTab] = useState('werkervaring');
+  const [renderedTab, setRenderedTab] = useState('werkervaring');
   const fadeOutAnimRef = useRef(null);
 
   const switchTab = (tab) => {

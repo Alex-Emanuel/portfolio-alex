@@ -59,11 +59,12 @@ div.content-body.ervaring .title-buttons {
   margin-bottom: 4rem;
 }
 
-div.content-body.ervaring .studie, div.content-body.ervaring .werkervaring {
+div.content-body.ervaring .studie {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   letter-spacing: 0.05rem;
+  line-height: 2rem;
 }
 
 div.content-body.ervaring h4 {
@@ -74,7 +75,7 @@ div.content-body.ervaring h2 {
   margin-bottom: 0px;
 }
 
-div.content-body.ervaring .werkervaring p:nth-of-type(4) {
+div.content-body.ervaring .studie p:nth-of-type(4) {
   line-height: 2rem;
 }
 
@@ -123,9 +124,31 @@ button.inactive:hover {
   .maxwidthcontent {
     width: 100%;
   }
+
+  div.content-body {
+    padding: 80px;
+  }
+
+  div.content-body.ervaring .studie, div.content-body.ervaring .werkervaring {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 668px) {
+  div.title-buttons {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  div.content-body.ervaring .studie, div.content-body.ervaring .werkervaring {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  div.content-body.ervaring {
+    padding-top: 50px;
+  }
+
   div.content-body {
     padding: 70px 30px;
   }
