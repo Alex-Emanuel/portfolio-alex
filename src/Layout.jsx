@@ -117,7 +117,7 @@ const Layout = () => {
                 bottomLineRef={bottomLineRef}/>
 
         <AnimatePresence mode="wait">
-          <Outlet key={location.pathname} />
+          <Outlet key={location.pathname} context={{ lenisRef }}/>
         </AnimatePresence>
 
         {/* <Footer /> */}

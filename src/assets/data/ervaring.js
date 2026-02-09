@@ -11,7 +11,7 @@ const ervaring = [
     datum: "24.06.2025",
     titel: "Oorkonde voor Shopfloorapp",
     subtitel: "Beste groep SDP2",
-    uitleg: "Bekroond als beste project voor het Software Development Project, in samenwerking met Delaware.",
+    uitleg: "Bekroond als beste project voor het tweedejaars Software Development Project, in samenwerking met Delaware.",
   },
   {
     id: 3,
@@ -25,7 +25,7 @@ const ervaring = [
     datum: "07.2024 - Heden",
     titel: "Instructeur gehoorzaamheid",
     subtitel: "Hondenschool Action4Dogs",
-    uitleg: "Geeft zowel individueel als in teamverband les aan hondenbaasjes.",
+    uitleg: "Geeft zowel individueel als in teamverband les aan baasjes. Begeleidt hen bij het aanleren van basiscommando's en het begrijpen van hondentaal.",
   }
 ];
 

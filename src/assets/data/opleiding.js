@@ -5,7 +5,7 @@ const opleiding = [
     titel: "Getuigschrift Dactylografie",
     subtitel: "Niveau beginners",
     uitleg: "Sint-Vincentiuscollege, Buggenhout",
-    extra: "Behaalde typesnelheid van 82,9 aanslagen per minuut.",
+    extra: "Behaalde typesnelheid van 82,9 aanslagen per minuut",
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ const opleiding = [
     titel: "Economie–Moderne Talen",
     subtitel: "Secundair onderwijs",
     uitleg: "Sint-Vincentiuscollege, Buggenhout",
-    extra: "Met grote onderscheiding. Ontvangst prijs voor grafisch ontwerp (vsk leerlingenkaart 2019-2020).",
+    extra: "Met grote onderscheiding",
   },
   {
     id: 3,
@@ -22,7 +22,7 @@ const opleiding = [
     subtitel: "Professionele bachelor",
     uitleg: "Arteveldehogeschool, Gent",
     specialisatie: "Cross-Media Ontwerp",
-    extra: "Met grote onderscheiding.",
+    extra: "Met grote onderscheiding",
   },
   {
     id: 4,
@@ -30,8 +30,7 @@ const opleiding = [
     titel: "Toegepaste Informatica",
     subtitel: "Professionele bachelor",
     uitleg: "HOGENT, Gent",
-    specialisatie: "Full-stack developer",
-    extra: "Verwacht af te studeren in 2026."
+    specialisatie: "Full-stack developer"
   }
 ];
 

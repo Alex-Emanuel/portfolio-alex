@@ -8,12 +8,15 @@ import { motion } from "framer-motion";
 import opleiding from '../../assets/data/opleiding.js';
 import werkervaring from '../../assets/data/ervaring.js';
 
+import { useOutletContext } from 'react-router-dom';
+
 const Ervaring = () => {
   const containerRef = useRef(null);
   const itemsRef = useRef(null);
   const [activeTab, setActiveTab] = useState('opleiding');
   const [renderedTab, setRenderedTab] = useState('opleiding');
   const fadeOutAnimRef = useRef(null);
+  const { lenisRef } = useOutletContext();
 
   const switchTab = (tab) => {
     if (tab === activeTab) return;
@@ -30,6 +33,7 @@ const Ervaring = () => {
     if (!itemsRef.current) {
       setActiveTab(tab);
       setRenderedTab(tab);
+      if (lenisRef.current) lenisRef.current?.resize();; // update Lenis meteen
       return;
     }
 
@@ -42,6 +46,11 @@ const Ervaring = () => {
       onComplete: () => {
         setActiveTab(tab);
         setRenderedTab(tab);
+
+        // ⚡ Update Lenis na DOM update
+        setTimeout(() => {
+          if (lenisRef.current) lenisRef.current?.resize();;
+        }, 50); // kleine delay zodat de nieuwe items volledig in DOM staan
       }
     });
   };
