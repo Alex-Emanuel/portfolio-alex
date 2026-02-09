@@ -14,6 +14,7 @@ const Hero = () => {
   const arrowsRef = useRef(null);
   const scrollTextRef = useRef(null);
   const containerRef = useRef(null);
+  const textRef = useRef(null);
 
   const opacity = useMotionValue(1);
   const y = useMotionValue(0);
@@ -66,10 +67,20 @@ const Hero = () => {
     return () => container.removeEventListener("scroll", onScroll);
   }, [opacity, y]);
 
+  useGSAP(() => {
+    // Entrance animatie bij pagina load
+    gsap.from(textRef.current, {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      ease: "power2.out"
+    });
+  }, []);
+
   return (
     <div className='hero' ref={containerRef}>
       <div className="text-content">
-        <motion.div style={{ opacity, y }}>
+        <motion.div style={{ opacity, y }} ref={textRef}>
           <p>Hi, ik ben Alex Emanuel</p>
           <h1>
             GRAPHIC DESIGNER <br/>
