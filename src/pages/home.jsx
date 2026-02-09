@@ -11,7 +11,7 @@ const pageVariants = {
 
 const Home = () => {
   useEffect(() => {
-      document.title = "Alex Emanuel | Dev & Design";
+      document.title = "Alex Emanuel | Design & Dev";
     }, []);
 
   return (

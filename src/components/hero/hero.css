@@ -1,4 +1,4 @@
-.hero {
+/* .hero {
   height: calc(100dvh - 40px);
   width: calc(100%);
   background-color: #7C1E22;
@@ -10,7 +10,37 @@
   background-blend-mode: lighten;
   border-radius: 20px 20px 20px 20px;
   position: relative;
+} */
+
+.hero {
+  height: calc(100dvh - 40px);
+  width: 100%;
+  background-color: #7C1E22;
+  background-image:
+    radial-gradient(at 85% 15%, #FFA700 0px, transparent 60%),
+    radial-gradient(at 50% 10%, var(--primary-orange) 0px, transparent 70%),
+    radial-gradient(at 100% 60%, #631412 0px, transparent 50%),
+    radial-gradient(at 10% 40%, #7C1E22 0px, transparent 50%);
+  background-blend-mode: lighten;
+  background-size: 120% 120%;
+  border-radius: 20px;
+  position: relative;
+
+  animation: gradientFloat 5s ease-in-out infinite;
 }
+
+@keyframes gradientFloat {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 20% 40%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
 
 .hero img {
   position: absolute;
