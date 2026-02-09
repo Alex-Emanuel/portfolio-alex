@@ -1,4 +1,5 @@
 import Hero from '../components/hero/hero.jsx';
+import Me from '../components/body/me.jsx';
 import { motion } from "framer-motion";
 import { useEffect } from 'react';
 
@@ -23,6 +24,7 @@ const Home = () => {
       transition={{ duration: 1, ease: "easeInOut" }}
     >
       <Hero />
+      <Me />
     </motion.main>
   )
 }

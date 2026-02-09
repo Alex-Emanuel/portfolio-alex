@@ -1,0 +1,43 @@
+div.content-body {
+  padding: 100px;
+}
+
+h4, h2 {
+  text-align: center;
+  margin: 0;
+  letter-spacing: 0.1rem;
+}
+
+h4 {
+  color: var(--primary-orange);
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+.me p {
+  color: var(--text-color);
+  margin-top: 2rem;
+  line-height: 2rem;
+}
+
+.maxwidthcontent {
+  width: 50rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media (max-width: 668px) {
+  div.content-body {
+    padding: 70px 30px;
+  }
+
+  .maxwidthcontent {
+    width: 100%;
+  }
+}

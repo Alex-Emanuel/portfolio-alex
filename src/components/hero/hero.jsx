@@ -5,12 +5,26 @@ import { motion } from "framer-motion";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
-import { Link } from 'react-router';
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+gsap.registerPlugin(ScrollToPlugin);
 
 const Hero = () => {
     const blobRef = useRef(null);
     const arrowsRef = useRef(null);
     const scrollTextRef = useRef(null);
+
+    const scrollToMe = (e) => {
+        e.preventDefault();
+
+        const container = document.querySelector(".website-content");
+
+        gsap.to(container, {
+            scrollTo: { y: "#me", offsetY: 40 },
+            duration: 1.3,
+            ease: "power3.inOut",
+        });
+    };
 
     useGSAP(() => {
         const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
@@ -56,8 +70,8 @@ const Hero = () => {
                     <span className='orangify'>✕</span> DEVELOPER <span className='orangify'>_</span>
                     </h1>
                     <div className='buttons'>
-                    <Button naam="Leer mij kennen" href="#"/>
-                    <Button naam="Projecten" href="#"/>
+                    <Button naam="Leer mij kennen" href="#me"/>
+                    <Button naam="Projecten" href="#me"/>
                     </div>
                 </motion.div>
 
@@ -66,7 +80,7 @@ const Hero = () => {
 
                         <motion.a
                         href="https://www.linkedin.com/in/alex-emanuel/"
-                        target="_blank" style={{ "padding-left": "2px"}}
+                        target="_blank" style={{ "paddingLeft": "2px"}}
                         whileHover={{ x: 3.5, y: -4, scale: 1.1 }}
                         transition={{ type: "spring", stiffness: 400 }}
                         >
@@ -107,7 +121,7 @@ const Hero = () => {
             <img src='/me.png'></img>
             
             <div className="scrollblob">
-                <a href="#">
+                <a href="#me" onClick={scrollToMe}>
                     <p ref={scrollTextRef}>scroll</p>
                     <ChevronsDown
                         ref={arrowsRef}

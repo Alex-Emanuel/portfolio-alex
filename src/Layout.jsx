@@ -1,8 +1,9 @@
 import { Outlet, ScrollRestoration, useLocation } from 'react-router-dom';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from "@gsap/react";
 import { AnimatePresence } from "framer-motion";
+import Lenis from '@studio-freight/lenis';
 
 import Navbar from './components/navbar/navbar.jsx'
 
@@ -20,6 +21,8 @@ const Layout = () => {
   const bottomLineRef = useRef(null);
   const logoRef = useRef(null);
 
+  const lenisRef = useRef(null);
+
   const location = useLocation();
 
   // pre loader animatie
@@ -27,6 +30,7 @@ const Layout = () => {
     if (!loading) return;
 
     document.body.style.overflow = 'hidden';
+    gsap.set('.website-content', { overflow: 'hidden' });
 
     gsap.set(buttonRef.current, {
       x: 50,
@@ -56,10 +60,10 @@ const Layout = () => {
           .to('.website-content', { autoAlpha: 1, duration: 0.1 })
           .to(orangeBoxRef.current, { height: 0, top: 0, bottom: 'auto', duration: 0.65 })
           .to(logoRef.current, { y: 0, autoAlpha: 1, duration: 0.1 }, '<+0.45')
-          .to(buttonRef.current, { x: 0, y: 0, duration: 1.5 }, '<-0.4')
-          .to(topLineRef.current, { autoAlpha: 1 }, '<+1.2')
-          .to(bottomLineRef.current, { autoAlpha: 1 }, '<')
-          .to(timeRef.current, { x: 0, duration: 2 }, '<-0.6');
+          .to(buttonRef.current, { x: 0, y: 0, duration: 1 }, '<-0.1')
+          .to(topLineRef.current, { autoAlpha: 1, duration: 0.5 }, '<+0.8')
+          .to(bottomLineRef.current, { autoAlpha: 1, duration: 0.5 }, '<')
+          .to(timeRef.current, { x: 0, duration: 2 }, '<-0.8');
 
           return 100;
         }
@@ -70,6 +74,36 @@ const Layout = () => {
     // cleanup
     return () => clearInterval(intervalRef.current);
   }, [loading], containerRef);
+
+  useEffect(() => {
+    if (loading) return;
+
+    const lenis = new Lenis({
+      wrapper: document.querySelector('.website-content'),
+      content: document.querySelector('.website-content > *'),
+      duration: 1,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+      smoothTouch: false,
+    });
+
+    lenisRef.current = lenis;
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, [loading]);
+
+  useEffect(() => {
+    lenisRef.current?.scrollTo(0, { immediate: true });
+  }, [location.pathname]);
 
   return (
     <>

@@ -98,8 +98,8 @@ const Navbar = ({buttonRef, timeRef, topLineRef, bottomLineRef, logoRef}) => {
     <img src='/alex-logo.png' className='logo' ref={logoRef}></img>
     </Link>
     <div className="navbutton" ref={buttonRef} onClick={toggleMenu}>
-        <span class="menu-line" ref={topLineRef}></span>
-        <span class="menu-line" ref={bottomLineRef}></span>
+        <span className="menu-line" ref={topLineRef}></span>
+        <span className="menu-line" ref={bottomLineRef}></span>
     </div>
     <p className="time" ref={timeRef}>{time}</p>
     <nav ref={navRef}>
