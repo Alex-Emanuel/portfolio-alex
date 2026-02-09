@@ -123,6 +123,9 @@ button.inactive:hover {
 
 .vaardigheden h3 {
   text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-size: 1rem;
+  text-align: left;
 }
 
 .vaardigheid-chip {
@@ -137,10 +140,12 @@ button.inactive:hover {
   color: var(--background-color);
   font-weight: bold;
   letter-spacing: 0.05rem;
+  margin-bottom: 5px;
 }
 
 .skill-icon {
   height: 20px;
+  fill: var(--background-color);
 }
 
 .vaardigheden-lijst {

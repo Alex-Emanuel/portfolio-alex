@@ -4,14 +4,14 @@ const ervaring = [
     datum: "04.2022 - 06.2022",
     titel: "Stagiair grafische vormgeving",
     subtitel: "If We Were You",
-    uitleg: "Stagiair grafische vormgeving bij If We Were You (nu Umbau), een B2B reclamebureau in Mechelen.",
+    uitleg: "Stagiair bij If We Were You (nu Umbau), een B2B reclamebureau in Mechelen.",
   },
   {
     id: 2,
     datum: "24.06.2025",
     titel: "Oorkonde voor Shopfloorapp",
     subtitel: "Beste groep SDP2",
-    uitleg: "Bekroond als beste project voor het tweedejaars Software Development Project, in samenwerking met Delaware.",
+    uitleg: "Bekroond als beste project voor het Software Development Project, in samenwerking met Delaware.",
   },
   {
     id: 3,
@@ -25,7 +25,7 @@ const ervaring = [
     datum: "07.2024 - Heden",
     titel: "Instructeur gehoorzaamheid",
     subtitel: "Hondenschool Action4Dogs",
-    uitleg: "Geeft zowel individueel als in teamverband les aan baasjes. Begeleidt hen bij het aanleren van basiscommando's en het begrijpen van hondentaal.",
+    uitleg: "Geeft zowel individueel als in teamverband les aan hondenbaasjes.",
   }
 ];
 

@@ -11,8 +11,8 @@ import werkervaring from '../../assets/data/ervaring.js';
 const Ervaring = () => {
   const containerRef = useRef(null);
   const itemsRef = useRef(null);
-  const [activeTab, setActiveTab] = useState('werkervaring');
-  const [renderedTab, setRenderedTab] = useState('werkervaring');
+  const [activeTab, setActiveTab] = useState('opleiding');
+  const [renderedTab, setRenderedTab] = useState('opleiding');
   const fadeOutAnimRef = useRef(null);
 
   const switchTab = (tab) => {
@@ -88,15 +88,6 @@ const Ervaring = () => {
         </div>
         <div>
           <motion.button
-            className={activeTab === 'werkervaring' ? '' : 'inactive'}
-            onClick={() => switchTab('werkervaring')}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-            Werkervaring
-          </motion.button>
-          <motion.button
             className={activeTab === 'opleiding' ? '' : 'inactive'}
             onClick={() => switchTab('opleiding')}
             whileHover={{ scale: 1.05 }}
@@ -104,6 +95,15 @@ const Ervaring = () => {
             transition={{ type: "spring", stiffness: 300 }}
           >
             Opleiding
+          </motion.button>
+          <motion.button
+            className={activeTab === 'werkervaring' ? '' : 'inactive'}
+            onClick={() => switchTab('werkervaring')}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
+            Werkervaring
           </motion.button>
         </div>
       </div>
@@ -114,7 +114,6 @@ const Ervaring = () => {
             <Summation key={item.id} onderdeel={item} />
           ))
         }
-
         {renderedTab === 'werkervaring' &&
           werkervaring.map((item) => (
             <Summation key={item.id} onderdeel={item} />
