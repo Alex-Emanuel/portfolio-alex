@@ -12,11 +12,12 @@ h4 {
   color: var(--primary-orange);
   font-weight: 500;
   margin-bottom: 0.8rem;
+  padding-top: 30px;
 }
 
 h2 {
   text-transform: uppercase;
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin-bottom: 3rem;
 }
 
@@ -32,6 +33,21 @@ h2 {
   text-align: center;
 }
 
+.maxwidthcontent img{
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: bottom;
+  border-radius: 20px;
+  margin-top: 3rem;
+}
+
+@media (max-width: 1150px) {
+  .maxwidthcontent {
+    width: 100%;
+  }
+}
+
 @media (max-width: 668px) {
   div.content-body {
     padding: 70px 30px;
@@ -39,5 +55,9 @@ h2 {
 
   .maxwidthcontent {
     width: 100%;
+  }
+
+  .maxwidthcontent img{
+    height: 200px;
   }
 }

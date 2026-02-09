@@ -69,6 +69,7 @@ body {
 
 .scroll-indicator__bar {
   width: 100%;
+  min-height: 10px;
   height: 0%;
   background: var(--primary-orange);
   border-radius: 2px;
