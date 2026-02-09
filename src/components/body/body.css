@@ -55,8 +55,11 @@ div.content-body.ervaring h4, div.content-body.ervaring h2 {
   text-align: left;
 }
 
+div.content-body.ervaring .title-buttons {
+  margin-bottom: 4rem;
+}
+
 div.content-body.ervaring .studie, div.content-body.ervaring .werkervaring {
-  margin-top: 4rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
@@ -86,11 +89,6 @@ div.title-buttons {
   gap: 10px;
 }
 
-button.inactive {
-  background-color: var(--reg-gray);
-  color: var(--primary-orange);
-}
-
 button {
   background-color: var(--primary-orange);
   color: var(--background-color);
@@ -100,6 +98,23 @@ button {
   font-size: 0.8rem;
   letter-spacing: 0.1rem;
   font-weight: 800;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #FFA401;
+  border-color: #FFA401;
+}
+
+button.inactive {
+  background-color: var(--reg-gray);
+  color: var(--primary-orange);
+  border-color: var(--primary-orange);
+}
+
+button.inactive:hover {
+  background-color: var(--primary-orange);
+  color: var(--background-color);
 }
 
 /*RESPONSIVE*/
