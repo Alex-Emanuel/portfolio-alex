@@ -16,14 +16,26 @@ const Button = ({ naam, href }) => {
     const container = document.querySelector(".website-content");
     if (!container) return;
 
+    const currentY = container.scrollTop;
+    const targetY = typeof href === "number"
+      ? href
+      : document.querySelector(href).offsetTop;
+
+    const distance = Math.abs(targetY - currentY);
+
     gsap.to(container, {
       scrollTo: {
-        y: href,
+        y: targetY,
         offsetY: 40,
       },
-      duration: 1.3,
-      ease: "power3.inOut",
+      duration: gsap.utils.clamp(
+        0.6,
+        2,
+        distance / 800
+      ),
+      ease: "sine.out",
     });
+
   };
 
   return (

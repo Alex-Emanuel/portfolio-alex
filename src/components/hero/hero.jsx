@@ -87,7 +87,7 @@ const Hero = () => {
           </h1>
           <div className='buttons'>
             <Button naam="Leer mij kennen" href="#me"/>
-            <Button naam="Projecten" href="#me"/>
+            <Button naam="Projecten" href="#projecten"/>
           </div>
         </motion.div>
 

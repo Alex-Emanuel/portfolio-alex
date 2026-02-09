@@ -35,7 +35,7 @@ const Projecten = () => {
 
   return (
     <div className='content-body projecten' ref={containerRef}>
-      <h4>Eerst zien, dan geloven...</h4>
+      <h4 id="projecten">Eerst zien, dan geloven...</h4>
       <h2>Enkele projecten</h2>
       <div className='projectgrid'>
         {projecten.map((p) => (
