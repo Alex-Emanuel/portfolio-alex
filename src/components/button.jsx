@@ -2,8 +2,10 @@ import '../index.css';
 import { ArrowDownRight } from 'lucide-react';
 import { motion } from "framer-motion";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
+import { Link } from "react-router-dom";
+
+const MotionLink = motion(Link);
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -14,13 +16,11 @@ const Button = ({ naam, href }) => {
     e.preventDefault();
 
     const container = document.querySelector(".website-content");
-    if (!container) return;
+    const target = document.querySelector(href);
+    if (!container || !target) return;
 
     const currentY = container.scrollTop;
-    const targetY = typeof href === "number"
-      ? href
-      : document.querySelector(href).offsetTop;
-
+    const targetY = target.offsetTop;
     const distance = Math.abs(targetY - currentY);
 
     gsap.to(container, {
@@ -28,25 +28,24 @@ const Button = ({ naam, href }) => {
         y: targetY,
         offsetY: 40,
       },
-      duration: gsap.utils.clamp(
-        0.6,
-        2,
-        distance / 800
-      ),
+      duration: gsap.utils.clamp(0.6, 2, distance / 800),
       ease: "sine.out",
     });
-
   };
 
+  if (href.startsWith("/")) {
+    return (
+      <MotionLink to={href} className="link-button" whileHover={{ scale: 1.05, y: -2 }}
+        whileTap={{ scale: 0.97 }} transition={{ type: "spring", stiffness: 300 }} >
+        {naam}
+        <span><ArrowDownRight size={27} /></span>
+      </MotionLink>
+    );
+  }
+
   return (
-    <motion.a
-      href={href}
-      onClick={handleClick}
-      className="link-button"
-      whileHover={{ scale: 1.05, y: -2 }}
-      whileTap={{ scale: 0.97 }}
-      transition={{ type: "spring", stiffness: 300 }}
-    >
+    <motion.a href={href} onClick={handleClick} className="link-button" whileHover={{ scale: 1.05, y: -2 }}
+      whileTap={{ scale: 0.97 }} transition={{ type: "spring", stiffness: 300 }} >
       {naam}
       <span><ArrowDownRight size={27} /></span>
     </motion.a>

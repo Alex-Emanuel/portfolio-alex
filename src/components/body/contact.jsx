@@ -35,7 +35,7 @@ const Contact = () => {
       <div className='maxwidthcontent'>
         <p>Zin om samen te werken<span className='orangify'>?</span></p>
         <p><span className='orangify'>⫸</span> Contacteer mij</p>
-        <Button naam="Contact" href="#me" />
+        <Button naam="Contact" href="/contact" />
       </div>
     </div>
   )
