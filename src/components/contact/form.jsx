@@ -47,7 +47,7 @@ const Form = () => {
             {...register("email", {
               required: "E-mailadres is verplicht",
               pattern: {
-                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$/,
                 message: "Ongeldig e-mailadres"
               }
             })}
@@ -57,7 +57,7 @@ const Form = () => {
 
         <div>
           <label htmlFor="message">Bericht</label>
-          <textarea id="message" rows={14}
+          <textarea id="message" rows={10}
             placeholder="Laat hier uw bericht achter…"
             {...register("message", {
               required: "Bericht is verplicht",
@@ -85,13 +85,9 @@ const Form = () => {
       {/* SNACKBAR */}
       <AnimatePresence>
         {snackbar.show && (
-          <motion.div 
-            className={`snackbar ${snackbar.type}`}
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 50 }}
-            transition={{ type: 'ease', stiffness: 500 }}
-          >
+          <motion.div className={`snackbar ${snackbar.type}`} initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 50 }}
+            transition={{ type: 'ease', stiffness: 500 }} >
             <span>{snackbar.message}</span>
             <button 
               className="snackbar-close" 
