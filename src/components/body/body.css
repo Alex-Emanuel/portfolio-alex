@@ -186,17 +186,36 @@ button.inactive:hover {
     "D E F";
 }
 
-.projectgrid > div {
-  background-color: var(--primary-orange);
+.project-item {
+  position: relative;
   border-radius: 20px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  overflow: hidden;
 }
 
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: var(--primary-orange);
+  transform-origin: bottom;
+  pointer-events: none;
+}
 
 /*RESPONSIVE*/
 /*==========*/
+@media (hover: none) and (pointer: coarse) {
+  .projectgrid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "A B"
+      "C D"
+      "E F";
+  }
+}
+
 @media (max-width: 1150px) {
   .maxwidthcontent {
     width: 100%;
@@ -209,18 +228,9 @@ button.inactive:hover {
   div.content-body.ervaring .studie, div.content-body.ervaring .werkervaring {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .projectgrid {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    grid-template-areas:
-      "A B"
-      "C D"
-      "E F";
-  }
 }
 
-@media (max-width: 668px) {
+@media (max-width: 768px) {
   .projectgrid {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
