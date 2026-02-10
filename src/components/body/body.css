@@ -279,10 +279,6 @@ p.team a {
   left: 73%;
 }
 
-.footer {
-  height: 600px;
-}
-
 /*RESPONSIVE*/
 /*==========*/
 @media (max-width: 1150px) {
