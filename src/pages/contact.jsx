@@ -16,6 +16,7 @@ const Contact = () => {
   const opacity = useMotionValue(1);
   const y = useMotionValue(0);
   const textRef = useRef(null);
+  const formRef = useRef(null);
 
   useEffect(() => {
     document.title = "Alex Emanuel | Contact";
@@ -23,11 +24,8 @@ const Contact = () => {
 
   useGSAP(() => {
       const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
-      tl.from(textRef.current, {
-        opacity: 0,
-        y: 50,
-        duration: 1
-      });
+      tl.from(textRef.current, { opacity: 0, y: 50, duration: 1 })
+        .from(formRef.current, { opacity: 0, y: 50, duration: 1 }, "<");
     }, []);
 
   return (
@@ -46,6 +44,7 @@ const Contact = () => {
               </div>
               <div className='socialscontact'>
                   <motion.a href="mailto:alex.emanuel@telenet.be"
+                    style={{paddingLeft: "1px"}}
                     whileHover={{ x: 3.5, y: -4, scale: 1.1 }}
                     transition={{ type: "spring", stiffness: 400 }}
                   >
@@ -53,6 +52,7 @@ const Contact = () => {
                     alex.emanuel@telenet.be
                   </motion.a>
                   <motion.a href="tel:+32484022278"
+                    style={{paddingLeft: "1px"}}
                     whileHover={{ x: 3.5, y: -4, scale: 1.1 }}
                     transition={{ type: "spring", stiffness: 400 }}
                   >
@@ -60,6 +60,7 @@ const Contact = () => {
                     +32 484 02 22 78
                   </motion.a>
                   <motion.a href="https://www.linkedin.com/in/alex-emanuel/"
+                    style={{paddingLeft: "1px"}}
                     whileHover={{ x: 3.5, y: -4, scale: 1.1 }}
                     transition={{ type: "spring", stiffness: 400 }}
                   >
@@ -70,12 +71,12 @@ const Contact = () => {
                     whileHover={{ x: 3.5, y: -4, scale: 1.1 }}
                     transition={{ type: "spring", stiffness: 400 }}
                   >
-                    <i className="fa-brands fa-square-github"></i>
+                    <i className="fa-brands fa-github"></i>
                     @Alex-Emanuel
                   </motion.a>
               </div>
             </motion.div>
-            <motion.div style={{ opacity, y }} className="form">
+            <motion.div ref={formRef} style={{ opacity, y }} className="form">
               <Form/>
             </motion.div>
           </div>

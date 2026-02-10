@@ -1,5 +1,5 @@
 .contactbg {
-  height: calc(100dvh - 40px);
+  min-height: calc(100dvh - 40px);
   width: 100%;
   background-color: #7C1E22;
   background-image:
@@ -29,7 +29,7 @@
 
 .contactbg .textsocials {
   padding: 100px;
-  padding-top: 10rem;
+  padding-bottom: 0px;
   font-size: 1.1rem;
   letter-spacing: 0.1rem;
   width: 100%;  
@@ -54,13 +54,6 @@
   text-transform: uppercase;
 }
 
-form {
-  background-color: var(--background-color);
-  height: 100%;
-  width: 70%;
-  border-radius: 20px;
-}
-
 .contactbg .socialscontact i {
   width: auto;
   margin-right: 10px;
@@ -78,7 +71,7 @@ form {
 .contactdata {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  padding-top: 5rem;
 }
 
 .contactdata .socialscontact {
@@ -87,4 +80,64 @@ form {
   align-items: flex-start;
   justify-content: center;
   gap: 10px;
+  margin-top: 4rem;
 }
+
+
+/* FORM */
+/* ==== */
+
+form {
+  background-color: var(--background-color);
+  width: calc(70% - 80px);
+  border-radius: 20px;
+  padding: 40px;
+}
+
+form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.error {
+  letter-spacing: 0.1rem;
+  font-size: 0.8rem;
+  color: red;
+}
+
+/* input en textarea full width */
+form input,
+form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  background-color: var(--background-color);
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.1rem;
+  font-size: 0.8rem;
+  border: 2px solid #505050;
+  outline: none;
+}
+
+form input:focus, form textarea:focus {
+  border-color: var(--primary-orange);
+}
+
+form label {
+  font-weight: bold;
+  font-size: 0.8rem;
+  color: var(--primary-orange);
+}
+
+/* optioneel: button ook full width */
+form button {
+}/*
+
+form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+} */

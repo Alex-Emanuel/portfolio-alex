@@ -33,7 +33,7 @@ const Ervaring = () => {
     if (!itemsRef.current) {
       setActiveTab(tab);
       setRenderedTab(tab);
-      if (lenisRef.current) lenisRef.current?.resize();; // update Lenis meteen
+      if (lenisRef.current) lenisRef.current?.resize();
       return;
     }
 
@@ -46,11 +46,9 @@ const Ervaring = () => {
       onComplete: () => {
         setActiveTab(tab);
         setRenderedTab(tab);
-
-        // ⚡ Update Lenis na DOM update
         setTimeout(() => {
-          if (lenisRef.current) lenisRef.current?.resize();;
-        }, 50); // kleine delay zodat de nieuwe items volledig in DOM staan
+          if (lenisRef.current) lenisRef.current?.resize();
+        }, 50);
       }
     });
   };

@@ -1,7 +1,10 @@
 import './contact.css';
 import { useForm } from "react-hook-form";
+import { useEffect } from "react";
+import { useOutletContext } from 'react-router-dom';
 
 const Form = () => {
+  const { lenisRef } = useOutletContext();
   const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm();
 
   const onSubmit = async (data) => {
@@ -12,10 +15,18 @@ const Form = () => {
     reset();
   };
 
+  useEffect(() => {
+    if (lenisRef?.current) {
+      setTimeout(() => {
+        lenisRef.current.resize();
+      }, 50);
+    }
+  }, [errors, lenisRef]);
+
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div>
-        <label htmlFor="email">E-mailadres</label><br />
+        <label htmlFor="email">E-mailadres</label>
         <input id="email" type="email" placeholder="jouw@mail.be"
           {...register("email", {
             required: "E-mailadres is verplicht",
@@ -25,11 +36,11 @@ const Form = () => {
             }
           })}
         />
-        {errors.email && <p>{errors.email.message}</p>}
+        {errors.email && <p className='error'>{errors.email.message}</p>}
       </div>
 
       <div>
-        <label htmlFor="message">Bericht</label><br />
+        <label htmlFor="message">Bericht</label>
         <textarea id="message" rows={15}
           placeholder="Laat hier uw bericht achter…"
           {...register("message", {
@@ -40,7 +51,7 @@ const Form = () => {
             }
           })}
         />
-        {errors.message && <p>{errors.message.message}</p>}
+        {errors.message && <p className='error'>{errors.message.message}</p>}
       </div>
 
       <button type="submit" disabled={isSubmitting}>
