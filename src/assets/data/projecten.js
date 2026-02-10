@@ -2,7 +2,7 @@ const projecten = [
   {
     id: 1,
     grid: "A",
-    img: "/projecten/techx_overview.jpg",
+    img: "/projecten/techx_overview.png",
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ const projecten = [
   {
     id: 5,
     grid: "E",
-    img: "/projecten/delaware.jpg",
+    img: "/projecten/delaware.png",
   },
   {
     id: 6,
