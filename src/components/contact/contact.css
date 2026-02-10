@@ -13,7 +13,13 @@
   position: relative;
 
   animation: gradientFloat 5s ease-in-out infinite;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
+
 
 @keyframes gradientFloat {
   0% {
@@ -28,14 +34,17 @@
 }
 
 .contactbg .textsocials {
-  padding: 100px;
-  padding-bottom: 0px;
+  padding: 0 100px;
   font-size: 1.1rem;
   letter-spacing: 0.1rem;
   width: 100%;  
   display: flex;
   gap: 30px;
-  height: calc(100% - 10rem - 100px);
+
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  height: calc(100%-40px);
 }
 
 .contactbg .textsocials div.contactdata {
@@ -71,7 +80,6 @@
 .contactdata {
   display: flex;
   flex-direction: column;
-  padding-top: 5rem;
 }
 
 .contactdata .socialscontact {
@@ -87,12 +95,18 @@
 /* FORM */
 /* ==== */
 
+.form {
+  margin: 0 50px;
+}
+
 form {
   background-color: var(--background-color);
-  width: calc(70% - 80px);
+  box-sizing: border-box;
+  width: 100%;
   border-radius: 20px;
   padding: 40px;
-  min-height: 30rem;
+  margin-right: 30rem;
+  min-height: 35rem;
   position: relative;
 }
 
