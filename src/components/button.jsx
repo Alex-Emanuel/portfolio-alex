@@ -5,7 +5,7 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { gsap } from "gsap";
 import { Link } from "react-router-dom";
 
-const MotionLink = motion(Link);
+const MotionLink = motion.create(Link);
 
 gsap.registerPlugin(ScrollToPlugin);
 

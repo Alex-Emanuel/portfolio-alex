@@ -1,0 +1,90 @@
+.contactbg {
+  height: calc(100dvh - 40px);
+  width: 100%;
+  background-color: #7C1E22;
+  background-image:
+    radial-gradient(at 85% 15%, #FFA700 0px, transparent 60%),
+    radial-gradient(at 50% 10%, var(--primary-orange) 0px, transparent 70%),
+    radial-gradient(at 100% 60%, #631412 0px, transparent 50%),
+    radial-gradient(at 10% 40%, #7C1E22 0px, transparent 50%);
+  background-blend-mode: lighten;
+  background-size: 120% 120%;
+  border-radius: 20px;
+  position: relative;
+
+  animation: gradientFloat 5s ease-in-out infinite;
+}
+
+@keyframes gradientFloat {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 20% 40%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.contactbg .textsocials {
+  padding: 100px;
+  padding-top: 10rem;
+  font-size: 1.1rem;
+  letter-spacing: 0.1rem;
+  width: 100%;  
+  display: flex;
+  gap: 30px;
+  height: calc(100% - 10rem - 100px);
+}
+
+.contactbg .textsocials div.contactdata {
+  width: 40%;
+}
+.contactbg .textsocials div.form {
+  width: 60%;
+}
+
+.contactbg .textsocials h1 {
+  font-weight: var(--extra-bold); /*extra bold*/
+  font-size: 3.4rem;
+  line-height: 3.6rem;
+  letter-spacing: 0.4rem;
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+
+form {
+  background-color: var(--background-color);
+  height: 100%;
+  width: 70%;
+  border-radius: 20px;
+}
+
+.contactbg .socialscontact i {
+  width: auto;
+  margin-right: 10px;
+}
+
+.contactbg .socialscontact a {
+  color: white;
+  transform-origin: center left;
+}
+
+.contactbg .socialscontact a:hover {
+  color: var(--primary-orange);
+}
+
+.contactdata {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contactdata .socialscontact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+}

@@ -1,29 +1,85 @@
-import { motion } from "framer-motion";
-import { useEffect } from "react";
+import { motion, useMotionValue } from "framer-motion";
+import { useEffect, useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
+import Form from "../components/contact/form";
+import '../components/contact/contact.css';
 
 const pageVariants = {
-    initial: { opacity: 0, y: 30 },
-    animate: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: -30 }
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+    exit: { opacity: 0 }
 };
 
 const Contact = () => {
+
+  const opacity = useMotionValue(1);
+  const y = useMotionValue(0);
+  const textRef = useRef(null);
+
   useEffect(() => {
     document.title = "Alex Emanuel | Contact";
   }, []);
 
+  useGSAP(() => {
+      const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
+      tl.from(textRef.current, {
+        opacity: 0,
+        y: 50,
+        duration: 1
+      });
+    }, []);
+
   return (
-    <motion.main
-      variants={pageVariants}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      transition={{ duration: 1, ease: "easeInOut" }}
+    <motion.main variants={pageVariants} initial="initial" animate="animate"
+      exit="exit" transition={{ duration: 1, ease: "easeInOut" }}
     >
-    <div>
-      <h1 className="text-4xl mb-4">Pagina niet gevonden</h1>
-      <p>Er is geen pagina op deze url, probeer iets anders.</p>
-    </div>
+      <div className='contactbg'>
+          <div className="textsocials">
+            <motion.div style={{ opacity, y }} ref={textRef} className="contactdata">
+              <div>
+                <p>Heeft u vragen?</p>
+                <h1>
+                  Contacteer <br/>
+                  <span className='orangify'>⫸</span> Mij nu
+                </h1>
+              </div>
+              <div className='socialscontact'>
+                  <motion.a href="mailto:alex.emanuel@telenet.be"
+                    whileHover={{ x: 3.5, y: -4, scale: 1.1 }}
+                    transition={{ type: "spring", stiffness: 400 }}
+                  >
+                    <i className="fa-solid fa-square-envelope"></i>
+                    alex.emanuel@telenet.be
+                  </motion.a>
+                  <motion.a href="tel:+32484022278"
+                    whileHover={{ x: 3.5, y: -4, scale: 1.1 }}
+                    transition={{ type: "spring", stiffness: 400 }}
+                  >
+                    <i className="fa-solid fa-square-phone"></i>
+                    +32 484 02 22 78
+                  </motion.a>
+                  <motion.a href="https://www.linkedin.com/in/alex-emanuel/"
+                    whileHover={{ x: 3.5, y: -4, scale: 1.1 }}
+                    transition={{ type: "spring", stiffness: 400 }}
+                  >
+                    <i className="fa-brands fa-linkedin"></i>
+                    @alex-emanuel
+                  </motion.a>
+                  <motion.a href="https://www.linkedin.com/in/alex-emanuel/"
+                    whileHover={{ x: 3.5, y: -4, scale: 1.1 }}
+                    transition={{ type: "spring", stiffness: 400 }}
+                  >
+                    <i className="fa-brands fa-square-github"></i>
+                    @Alex-Emanuel
+                  </motion.a>
+              </div>
+            </motion.div>
+            <motion.div style={{ opacity, y }} className="form">
+              <Form/>
+            </motion.div>
+          </div>
+      </div>
     </motion.main>
   );
 };

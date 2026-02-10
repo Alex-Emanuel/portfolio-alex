@@ -48,6 +48,7 @@
   line-height: 3.6rem;
   letter-spacing: 0.4rem;
   margin-top: 20px;
+  text-transform: uppercase;
 }
 
 .text-content .link-button:first-of-type {
