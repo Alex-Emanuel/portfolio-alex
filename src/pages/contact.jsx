@@ -45,31 +45,31 @@ const Contact = () => {
               <div className='socialscontact'>
                   <motion.a href="mailto:alex.emanuel@telenet.be"
                     style={{paddingLeft: "1px"}}
-                    whileHover={{ x: 3.5, y: -4, scale: 1.1 }}
-                    transition={{ type: "spring", stiffness: 400 }}
+                    whileHover={{ x: 1.5, y: -3 }}
+                    transition={{ type: "ease", stiffness: 400 }}
                   >
                     <i className="fa-solid fa-square-envelope"></i>
                     alex.emanuel@telenet.be
                   </motion.a>
                   <motion.a href="tel:+32484022278"
                     style={{paddingLeft: "1px"}}
-                    whileHover={{ x: 3.5, y: -4, scale: 1.1 }}
-                    transition={{ type: "spring", stiffness: 400 }}
+                    whileHover={{ x: 1.5, y: -3 }}
+                    transition={{ type: "ease", stiffness: 400 }}
                   >
                     <i className="fa-solid fa-square-phone"></i>
                     +32 484 02 22 78
                   </motion.a>
                   <motion.a href="https://www.linkedin.com/in/alex-emanuel/"
                     style={{paddingLeft: "1px"}}
-                    whileHover={{ x: 3.5, y: -4, scale: 1.1 }}
-                    transition={{ type: "spring", stiffness: 400 }}
+                    whileHover={{ x: 1.5, y: -3 }}
+                    transition={{ type: "ease", stiffness: 400 }}
                   >
                     <i className="fa-brands fa-linkedin"></i>
                     @alex-emanuel
                   </motion.a>
                   <motion.a href="https://www.linkedin.com/in/alex-emanuel/"
-                    whileHover={{ x: 3.5, y: -4, scale: 1.1 }}
-                    transition={{ type: "spring", stiffness: 400 }}
+                    whileHover={{ x: 1.5, y: -3 }}
+                    transition={{ type: "ease", stiffness: 400 }}
                   >
                     <i className="fa-brands fa-github"></i>
                     @Alex-Emanuel

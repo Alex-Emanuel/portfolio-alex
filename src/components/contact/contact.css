@@ -123,7 +123,6 @@ form > div {
   color: red;
 }
 
-/* input en textarea full width */
 form input,
 form textarea {
   width: 100%;
@@ -149,7 +148,6 @@ form label {
   color: var(--primary-orange);
 }
 
-/* Plaats de button rechts */
 form button {
   display: block;
   cursor: pointer;
@@ -177,6 +175,38 @@ form button {
 form button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
+}
+
+.snackbar {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background-color: var(--background-color);
+  color: var(--primary-orange);
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  z-index: 9999;
+}
+
+.snackbar.success {
+  color: #4caf50;
+}
+
+.snackbar-close {
+  background: transparent;
+  border: none;
+  color: var(--lighter-gray);
+  cursor: pointer;
+  padding: 0;
+  margin-left: 16px;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+button.snackbar-close:hover {
+  background-color: transparent;
+  color: white;
 }
 
 
