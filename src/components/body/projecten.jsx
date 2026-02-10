@@ -53,18 +53,16 @@ const ProjectItem = ({ p, index, activeRow, setActiveRow, touch, columns }) => {
         <p>{p.titel}</p>
         <p>{p.uitleg}</p>
         {p.team && p.team.length > 0 && (
-  <p className='team'>
-    Team:{" "}
-    {p.team.map((lid, i) => (
-      <span key={i}>
-        <a rel="noopener noreferrer" href={lid.linkedin}>{lid.naam}</a>
-        {i < p.team.length - 1 ? ", " : ""}
-      </span>
-    ))}
-  </p>
-)}
-
-
+          <p className='team'>
+            Team:{" "}
+            {p.team.map((lid, i) => (
+              <span key={i}>
+                <a rel="noopener noreferrer" href={lid.linkedin}>{lid.naam}</a>
+                {i < p.team.length - 1 ? ", " : ""}
+              </span>
+            ))}
+          </p>
+        )}
         <p className='talen'>{p.talen}</p>
         <a href={p.link} target="_blank" className='direct' rel="noopener noreferrer">
           {p.type === "dev" ? (
@@ -82,7 +80,7 @@ const ProjectItem = ({ p, index, activeRow, setActiveRow, touch, columns }) => {
 const Projecten = () => {  
   const getColumns = () => {
     if (!isTouchDevice()) return null;
-    if (window.innerWidth >= 768) return 2;
+    if (window.innerWidth >= 668) return 2;
     return 1;
   };
 

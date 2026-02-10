@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import Ervaring from '../components/body/ervaring.jsx';
 import Vaardigheden from '../components/body/vaardigheden.jsx';
 import Projecten from '../components/body/projecten.jsx';
+import Contact from '../components/body/contact.jsx';
 
 const pageVariants = {
     initial: { opacity: 0 },
@@ -30,6 +31,8 @@ const Home = () => {
       <Ervaring />
       <Vaardigheden />
       <Projecten />
+      <Contact />
+      <p className='footer'>space</p>
     </motion.main>
   )
 }
