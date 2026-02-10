@@ -201,6 +201,37 @@ button.inactive:hover {
   background-color: var(--primary-orange);
   transform-origin: bottom;
   pointer-events: none;
+  color: var(--background-color);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.project-overlay a {
+  pointer-events: auto;
+  color: var(--primary-orange);
+  position: absolute;
+  padding: 16px;
+  padding-bottom: 12px;
+  background-color: var(--background-color);
+  bottom: 0;
+  left: 3rem;
+  border-radius: 20px 20px 0 0;
+  font-weight: bold;
+  letter-spacing: 0.05rem;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.project-overlay a:hover {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.project-overlay a i {
+  margin-right: 5px;
 }
 
 /*RESPONSIVE*/

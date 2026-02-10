@@ -49,7 +49,19 @@ const ProjectItem = ({ p, index, activeRow, setActiveRow, touch, columns }) => {
         gridArea: p.grid,
       }}
     >
-      <motion.div className="project-overlay" variants={overlayVariants} transition={{ duration: 0.25, ease: "easeOut" }} />
+      <motion.div className="project-overlay" variants={overlayVariants} transition={{ duration: 0.25, ease: "easeOut" }}>
+        <p>{p.titel}</p>
+        <p>{p.uitleg}</p>
+        <p>{p.talen}</p>
+        <a href={p.link} target="_blank" rel="noopener noreferrer">
+          {p.type === "dev" ? (
+            <i className="fa-brands fa-github"></i>
+          ) : (
+            <i className="fa-solid fa-globe"></i>
+          )}
+          Bekijk de {p.type === "dev" ? "code" : "website"}
+        </a>
+      </motion.div>
     </motion.div>
   );
 };
