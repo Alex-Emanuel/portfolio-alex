@@ -52,8 +52,21 @@ const ProjectItem = ({ p, index, activeRow, setActiveRow, touch, columns }) => {
       <motion.div className="project-overlay" variants={overlayVariants} transition={{ duration: 0.25, ease: "easeOut" }}>
         <p>{p.titel}</p>
         <p>{p.uitleg}</p>
-        <p>{p.talen}</p>
-        <a href={p.link} target="_blank" rel="noopener noreferrer">
+        {p.team && p.team.length > 0 && (
+  <p className='team'>
+    Team:{" "}
+    {p.team.map((lid, i) => (
+      <span key={i}>
+        <a rel="noopener noreferrer" href={lid.linkedin}>{lid.naam}</a>
+        {i < p.team.length - 1 ? ", " : ""}
+      </span>
+    ))}
+  </p>
+)}
+
+
+        <p className='talen'>{p.talen}</p>
+        <a href={p.link} target="_blank" className='direct' rel="noopener noreferrer">
           {p.type === "dev" ? (
             <i className="fa-brands fa-github"></i>
           ) : (

@@ -206,10 +206,23 @@ button.inactive:hover {
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 2rem;
+  padding: 1.5rem 2rem 1.5rem 2rem;
 }
 
-.project-overlay a {
+.project-overlay .talen {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 3rem;
+  font-style: italic;
+}
+
+p.team a {
+  font-style: italic;
+  color: var(--background-color);
+  pointer-events: auto;
+}
+
+.project-overlay a.direct {
   pointer-events: auto;
   color: var(--primary-orange);
   position: absolute;
@@ -220,7 +233,7 @@ button.inactive:hover {
   left: 3rem;
   border-radius: 20px 20px 0 0;
   font-weight: bold;
-  letter-spacing: 0.05rem;
+  letter-spacing: 0.1rem;
   font-size: 1rem;
   transition: color 0.3s ease;
 }
@@ -232,6 +245,16 @@ button.inactive:hover {
 
 .project-overlay a i {
   margin-right: 5px;
+}
+
+.project-overlay p {
+  line-height: 2rem;
+  font-size: 1rem;
+}
+
+.project-overlay p:first-of-type {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
 }
 
 /*RESPONSIVE*/
@@ -259,9 +282,31 @@ button.inactive:hover {
   div.content-body.ervaring .studie, div.content-body.ervaring .werkervaring {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .project-overlay .talen {
+    bottom: 4rem;
+    width: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .project-overlay a.direct {
+    bottom: 0;
+    width: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .project-overlay p, .project-overlay a.direct {
+    font-size: 0.9rem;
+  }
+
+  .projectgrid > div {
+    height: 22rem;
+  }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 668px) {
   .projectgrid {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
@@ -276,7 +321,7 @@ button.inactive:hover {
   }
 
   .projectgrid > div {
-    height: 50dvw;
+    height: 25rem;
   }
 
   div.title-buttons {

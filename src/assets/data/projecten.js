@@ -34,7 +34,7 @@ const projecten = [
     grid: "D",
     img: "/projecten/vmm.png",
     titel: "VMM applicatie",
-    uitleg: "In opdracht van de Vlaamse Milieumaatschappij werd een app ontwikkeld ter ondersteuning van techniekers bij hun werk.",
+    uitleg: "App in opdracht van de Vlaamse Milieumaatschappij ter ondersteuning van techniekers bij hun werk.",
     talen: "C#, WASM, .NET",
     team: [
       { naam: "Dogukan", linkedin: "https://www.linkedin.com/in/dogukan-uyanik/" },
