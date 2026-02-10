@@ -2,6 +2,7 @@ import './contact.css';
 import { useForm } from "react-hook-form";
 import { useEffect } from "react";
 import { useOutletContext } from 'react-router-dom';
+import { motion } from "framer-motion";
 
 const Form = () => {
   const { lenisRef } = useOutletContext();
@@ -41,7 +42,7 @@ const Form = () => {
 
       <div>
         <label htmlFor="message">Bericht</label>
-        <textarea id="message" rows={15}
+        <textarea id="message" rows={14}
           placeholder="Laat hier uw bericht achter…"
           {...register("message", {
             required: "Bericht is verplicht",
@@ -54,8 +55,15 @@ const Form = () => {
         {errors.message && <p className='error'>{errors.message.message}</p>}
       </div>
 
-      <button type="submit" disabled={isSubmitting}>
-        {isSubmitting ? "Verzenden..." : "Verzenden"}
+      <button type="submit" disabled={isSubmitting} className='submitbtn'>
+        {isSubmitting && (
+          <motion.div className='spinner'
+            animate={{ rotate: 360 }}
+            transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
+          />
+        )}
+        <span>{isSubmitting ? "" : "Verzenden"}</span>
+        
       </button>
     </form>
   );
