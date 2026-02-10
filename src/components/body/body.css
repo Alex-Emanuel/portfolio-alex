@@ -285,7 +285,7 @@ p.team a {
 
 /*RESPONSIVE*/
 /*==========*/
-@media (hover: none) and (pointer: coarse) {
+@media (max-width: 1150px) {
   .projectgrid {
     height: 100%;
     grid-template-columns: 1fr 1fr;
@@ -295,9 +295,7 @@ p.team a {
       "C D"
       "E F";
   }
-}
 
-@media (max-width: 1150px) {
   .contactref p {
     font-size: 2.8rem;
   }
