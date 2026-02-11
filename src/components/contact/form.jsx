@@ -46,7 +46,7 @@ const Form = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
           <label htmlFor="email">E-mailadres</label>
-          <input id="email" type="email" placeholder="jouw@mail.be"
+          <input id="email" type="email" placeholder="jouw@mail.be" autocomplete="on"
             {...register("email", {
               required: "E-mailadres is verplicht",
               pattern: {
