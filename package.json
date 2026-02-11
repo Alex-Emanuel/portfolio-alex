@@ -1,5 +1,6 @@
 {
   "name": "portfolio-alex",
+  "homepage": "https://alexemanuel.be",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,7 +8,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@coreui/icons": "^3.0.1",
@@ -20,6 +23,7 @@
     "@gsap/react": "^2.1.2",
     "@studio-freight/lenis": "^1.0.42",
     "framer-motion": "^12.33.0",
+    "gh-pages": "^6.3.0",
     "gsap": "^3.14.2",
     "lucide-react": "^0.563.0",
     "react": "^19.2.0",
