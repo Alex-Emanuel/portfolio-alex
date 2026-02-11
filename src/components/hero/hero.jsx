@@ -112,13 +112,9 @@ const Hero = () => {
               <i className="fa-brands fa-github"></i>
             </motion.a>
 
-            <motion.a
-              className="download"
-              href="/cv-alex-emanuel.pdf"
-              download
-              whileHover="hover"
-              initial="rest"
-              animate="rest"
+            <motion.a className="download" download
+              href="/cv-alex-emanuel.pdf" whileHover="hover" 
+              initial="rest" animate="rest"
             >
               <motion.span
                 variants={{
@@ -142,12 +138,7 @@ const Hero = () => {
           <p ref={scrollTextRef}>scroll</p>
           <ChevronsDown ref={arrowsRef} size={34} strokeWidth={1} className="arrows" />
         </a>
-        <svg
-          ref={blobRef}
-          className="blob"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 248.56 72.18"
-        >
+        <svg ref={blobRef} className="blob" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 248.56 72.18" >
           <g>
             <path
               className="cls-1"

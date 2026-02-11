@@ -9,6 +9,7 @@ import Contact from '../components/body/contact.jsx';
 import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useOutletContext } from 'react-router-dom';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -20,32 +21,39 @@ const pageVariants = {
 
 const Home = () => {
   const containerRef = useRef(null);
+  const { lenisRef } = useOutletContext();
 
   useGSAP(() => {
-  if (!containerRef.current) return;
+    if (!containerRef.current) return;
 
-  gsap.fromTo(
-    containerRef.current,
-    { opacity: 0, y: 80 },
-    {
-      opacity: 1,
-      y: 0,
-      ease: "none",
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top 115%",
-        end: "top 90%",
-        scrub: true,
-        scroller: ".website-content",
-      },
-    }
-  );
-}, []);
+    gsap.fromTo(
+      containerRef.current,
+      { opacity: 0, y: 80 },
+      {
+        opacity: 1,
+        y: 0,
+        ease: "none",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 115%",
+          end: "top 90%",
+          scrub: true,
+          scroller: ".website-content",
+        },
+      }
+    );
+  }, []);
 
 
   useEffect(() => {
-      document.title = "Alex Emanuel | Design & Dev";
-    }, []);
+    document.title = "Alex Emanuel | Design & Dev";
+
+    if (lenisRef?.current) {
+      setTimeout(() => {
+        lenisRef.current.resize();
+      }, 50);
+    }
+  }, []);
 
   return (
     <motion.main
