@@ -6,7 +6,10 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const Form = () => {
   const { lenisRef } = useOutletContext();
-  const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm();
+  // const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm();
+  const { register, handleSubmit, formState: { errors, isSubmitting, isValid },  reset } = useForm({
+    mode: "onChange"
+  });
 
   const [snackbar, setSnackbar] = useState({ show: false, message: '', type: 'success' });
 
@@ -16,9 +19,9 @@ const Form = () => {
       await new Promise((resolve) => setTimeout(resolve, 2000));
       
       reset();
-      setSnackbar({ show: true, message: 'Bericht succesvol verzonden!', type: 'success' });
+      setSnackbar({ show: true, message: 'Bericht verzonden!', type: 'success' });
     } catch (err) {
-      setSnackbar({ show: true, message: 'Er is iets misgegaan. Probeer opnieuw.', type: 'error' });
+      setSnackbar({ show: true, message: 'Fout! Probeer opnieuw.', type: 'error' });
     }
   };
 
@@ -33,7 +36,7 @@ const Form = () => {
   // Verberg snackbar na 3 seconden automatisch
   useEffect(() => {
     if (snackbar.show) {
-      const timer = setTimeout(() => setSnackbar({ ...snackbar, show: false }), 3000);
+      const timer = setTimeout(() => setSnackbar({ ...snackbar, show: false }), 10000);
       return () => clearTimeout(timer);
     }
   }, [snackbar]);
@@ -69,16 +72,20 @@ const Form = () => {
           />
           {errors.message && <p className='error'>{errors.message.message}</p>}
         </div>
-
-        <motion.button type="submit" disabled={isSubmitting} className='submitbtn'
-          whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }}
+        <motion.button type="submit" className="submitbtn" disabled={!isValid || isSubmitting}
+          whileHover={!isValid || isSubmitting ? {} : { scale: 1.05, y: -2 }}
+          whileTap={!isValid || isSubmitting ? {} : { scale: 0.95 }}
           transition={{ type: "spring", stiffness: 300, damping: 15 }} >
           {isSubmitting && (
-            <motion.div className='spinner' animate={{ rotate: 360 }}
+            <motion.div
+              className="spinner"
+              animate={{ rotate: 360 }}
               transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
             />
           )}
-          <span>{isSubmitting ? "" : "Verzenden"}</span>
+          <span>
+            {isSubmitting ? "" : "Verzenden"}
+          </span>
         </motion.button>
       </form>
 
@@ -89,10 +96,7 @@ const Form = () => {
             animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 50 }}
             transition={{ type: 'ease', stiffness: 500 }} >
             <span>{snackbar.message}</span>
-            <button 
-              className="snackbar-close" 
-              onClick={() => setSnackbar({ ...snackbar, show: false })}
-            >
+            <button className="snackbar-close" onClick={() => setSnackbar({ ...snackbar, show: false })} >
               ×
             </button>
           </motion.div>
