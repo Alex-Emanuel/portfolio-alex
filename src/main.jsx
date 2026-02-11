@@ -10,16 +10,21 @@ import NotFound from './pages/notfound.jsx';
 
 import './index.css'
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      element: <Layout />,
+      children: [
+        { path: '/', Component: Home },
+        { path: '/contact', Component: Contact },
+        { path: '*', Component: NotFound },
+      ],
+    },
+  ],
   {
-    element: <Layout />,
-    children: [
-      { path: '/', Component: Home},
-      { path: '/contact', Component: Contact},
-      { path: '*', Component: NotFound}
-    ]
-  },
-]);
+    basename: '/portfolio-alex'
+  }
+);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
