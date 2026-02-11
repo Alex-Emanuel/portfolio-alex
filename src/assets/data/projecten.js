@@ -2,7 +2,7 @@ const projecten = [
   {
     id: 1,
     grid: "A",
-    img: "/projecten/QueenDomino.png",
+    img: "./projecten/QueenDomino.png",
     titel: "Queendomino",
     uitleg: "Digitale versie van Kingdomino, genaamd Queendomino door ons vrouwelijke dev-team.",
     talen: "Java",
@@ -17,7 +17,7 @@ const projecten = [
   {
     id: 2,
     grid: "B",
-    img: "/projecten/gdm-bap.jpg",
+    img: "./projecten/gdm-bap.jpg",
     titel: "Bachelorproef GDM",
     uitleg: "Mijn bachelorproef gemaakt voor de finalisatie van mijn opleiding tot grafisch ontwerper.",
     talen: "Ps, Id, Ai",
@@ -27,7 +27,7 @@ const projecten = [
   {
     id: 3,
     grid: "C",
-    img: "/projecten/frontendwebdev.png",
+    img: "./projecten/frontendwebdev.png",
     titel: "Beheerapp A4D",
     uitleg: "Een applicatie voor het lidbeheer van hondenschool Action4Dogs. Geschikt voor het beheer van groepen, leden en hun honden.",
     talen: "React, Node.js",
@@ -37,7 +37,7 @@ const projecten = [
   {
     id: 4,
     grid: "D",
-    img: "/projecten/vmm.png",
+    img: "./projecten/vmm.png",
     titel: "VMM applicatie",
     uitleg: "App in opdracht van de Vlaamse Milieumaatschappij ter ondersteuning van techniekers bij hun werk.",
     talen: "C#, WASM, .NET",
@@ -52,7 +52,7 @@ const projecten = [
   {
     id: 5,
     grid: "E",
-    img: "/projecten/delaware.png",
+    img: "./projecten/delaware.png",
     titel: "Shopfloor Applicatie",
     uitleg: "Applicatie voor gebruikers-, site- en machinebeheer. Eveneens genereren van rapporten mogelijk.",
     talen: "Java, React, Node.js",
@@ -68,7 +68,7 @@ const projecten = [
   {
     id: 6,
     grid: "F",
-    img: "/projecten/techx_overview.png",
+    img: "./projecten/techx_overview.png",
     titel: "techx",
     uitleg: "Een Spring Boot web applicatie, gemaakt voor het beheer van een tech conference.",
     talen: "Spring Boot",

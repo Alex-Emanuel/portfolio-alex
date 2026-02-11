@@ -95,7 +95,7 @@ const Navbar = ({buttonRef, timeRef, topLineRef, bottomLineRef, logoRef}) => {
   return (
     <>
     <Link to='/'>
-    <img src='/alex-logo.png' className='logo' ref={logoRef}></img>
+    <img src='./alex-logo.png' className='logo' ref={logoRef}></img>
     </Link>
     <div className="navbutton" ref={buttonRef} onClick={toggleMenu}>
         <span className="menu-line" ref={topLineRef}></span>

@@ -68,7 +68,7 @@ const Me = () => {
           waar ik lesgeef aan baasjes en hun trouwe viervoeters. Als enthousiaste <b>hondenliefhebber</b> 
           train en ga ik ook zelf regelmatig op pad met mijn driejarige Australische herder Vinny.
         </p>
-        <img ref={imgRef} src='/beach.jpg' alt="Alex wandelt met haar hond Vinny op het strand"/>
+        <img ref={imgRef} src='./beach.jpg' alt="Alex wandelt met haar hond Vinny op het strand"/>
       </div>
     </div>
   )
