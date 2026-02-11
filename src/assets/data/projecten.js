@@ -16,16 +16,6 @@ const projecten = [
   },
   {
     id: 2,
-    grid: "F",
-    img: "/projecten/techx_overview.png",
-    titel: "techx",
-    uitleg: "Een Spring Boot web applicatie, gemaakt voor het beheer van een tech conference.",
-    talen: "Spring Boot",
-    link: "https://github.com/Alex-Emanuel/techx-2425",
-    type: "dev",
-  },
-  {
-    id: 3,
     grid: "B",
     img: "/projecten/gdm-bap.jpg",
     titel: "Bachelorproef GDM",
@@ -35,7 +25,7 @@ const projecten = [
     type: "design",
   },
   {
-    id: 4,
+    id: 3,
     grid: "C",
     img: "/projecten/frontendwebdev.png",
     titel: "Beheerapp A4D",
@@ -45,7 +35,7 @@ const projecten = [
     type: "dev",
   },
   {
-    id: 5,
+    id: 4,
     grid: "D",
     img: "/projecten/vmm.png",
     titel: "VMM applicatie",
@@ -60,7 +50,7 @@ const projecten = [
     type: "dev",
   },
   {
-    id: 6,
+    id: 5,
     grid: "E",
     img: "/projecten/delaware.png",
     titel: "Shopfloor Applicatie",
@@ -73,6 +63,16 @@ const projecten = [
       { naam: "Deniz", linkedin: "https://www.linkedin.com/in/deniz-callens/" },
     ],
     link: "https://github.com/orgs/SDP2-2425/repositories",
+    type: "dev",
+  },
+  {
+    id: 6,
+    grid: "F",
+    img: "/projecten/techx_overview.png",
+    titel: "techx",
+    uitleg: "Een Spring Boot web applicatie, gemaakt voor het beheer van een tech conference.",
+    talen: "Spring Boot",
+    link: "https://github.com/Alex-Emanuel/techx-2425",
     type: "dev",
   },
 ];
