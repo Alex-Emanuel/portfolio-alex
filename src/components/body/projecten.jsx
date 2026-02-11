@@ -9,7 +9,17 @@ import projecten from '../../assets/data/projecten.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const isTouchDevice = () => window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+const isTouchDevice = () => {
+  const hasTouch =
+    "ontouchstart" in window ||
+    navigator.maxTouchPoints > 0 ||
+    navigator.msMaxTouchPoints > 0;
+
+  const smallScreen = window.innerWidth <= 1024;
+
+  return hasTouch && smallScreen;
+};
+
 const ProjectItem = ({ p, index, activeRow, setActiveRow, touch, columns }) => {
   const itemRef = useRef(null);
   const [hover, setHover] = useState(false);
@@ -44,6 +54,7 @@ const ProjectItem = ({ p, index, activeRow, setActiveRow, touch, columns }) => {
   return (
     <motion.div ref={itemRef} className="project-item" animate={active ? "hover" : "rest"}
       onHoverStart={!touch ? () => setHover(true) : undefined} onHoverEnd={!touch ? () => setHover(false) : undefined}
+      onClick={() => setActiveRow(rowIndex)} 
       style={{
         backgroundImage: `url(${p.img})`,
         gridArea: p.grid,
