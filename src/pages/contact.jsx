@@ -24,8 +24,8 @@ const Contact = () => {
 
   useGSAP(() => {
       const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
-      tl.from(textRef.current, { opacity: 0, y: 50, duration: 1 })
-        .from(formRef.current, { opacity: 0, y: 50, duration: 1 }, "<");
+      tl.from(textRef.current, { opacity: 0, duration: 1 })
+        .from(formRef.current, { opacity: 0, duration: 1 }, "<");
     }, []);
 
   return (
