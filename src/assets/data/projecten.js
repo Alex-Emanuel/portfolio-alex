@@ -2,6 +2,21 @@ const projecten = [
   {
     id: 1,
     grid: "A",
+    img: "/projecten/QueenDomino.png",
+    titel: "Queendomino",
+    uitleg: "Digitale versie van Kingdomino, genaamd Queendomino door ons vrouwelijke dev-team.",
+    talen: "Java",
+    team: [
+      { naam: "Britt", linkedin: "https://www.linkedin.com/in/britt-emanuel/" },
+      { naam: "Maxe", linkedin: "https://www.linkedin.com/in/maxeadams/" },
+      { naam: "Jana", linkedin: "https://www.linkedin.com/in/yana-cattoir-145629363/" },
+    ],
+    link: "https://github.com/Alex-Emanuel/Queendomino-2324",
+    type: "dev",
+  },
+  {
+    id: 2,
+    grid: "F",
     img: "/projecten/techx_overview.png",
     titel: "techx",
     uitleg: "Een Spring Boot web applicatie, gemaakt voor het beheer van een tech conference.",
@@ -10,7 +25,7 @@ const projecten = [
     type: "dev",
   },
   {
-    id: 2,
+    id: 3,
     grid: "B",
     img: "/projecten/gdm-bap.jpg",
     titel: "Bachelorproef GDM",
@@ -20,7 +35,7 @@ const projecten = [
     type: "design",
   },
   {
-    id: 3,
+    id: 4,
     grid: "C",
     img: "/projecten/frontendwebdev.png",
     titel: "Beheerapp A4D",
@@ -30,7 +45,7 @@ const projecten = [
     type: "dev",
   },
   {
-    id: 4,
+    id: 5,
     grid: "D",
     img: "/projecten/vmm.png",
     titel: "VMM applicatie",
@@ -45,7 +60,7 @@ const projecten = [
     type: "dev",
   },
   {
-    id: 5,
+    id: 6,
     grid: "E",
     img: "/projecten/delaware.png",
     titel: "Shopfloor Applicatie",
@@ -60,21 +75,6 @@ const projecten = [
     link: "https://github.com/orgs/SDP2-2425/repositories",
     type: "dev",
   },
-  {
-    id: 6,
-    grid: "F",
-    img: "/projecten/QueenDomino_overview.png",
-    titel: "Queendomino",
-    uitleg: "Digitale versie van Kingdomino, genaamd Queendomino door ons vrouwelijke dev-team.",
-    talen: "Java",
-    team: [
-      { naam: "Britt", linkedin: "https://www.linkedin.com/in/britt-emanuel/" },
-      { naam: "Maxe", linkedin: "https://www.linkedin.com/in/maxeadams/" },
-      { naam: "Jana", linkedin: "https://www.linkedin.com/in/yana-cattoir-145629363/" },
-    ],
-    link: "https://github.com/Alex-Emanuel/Queendomino-2324",
-    type: "dev",
-  }
 ];
 
 export default projecten;
