@@ -67,13 +67,13 @@ const Contact = () => {
                     <i className="fa-brands fa-linkedin"></i>
                     @alex-emanuel
                   </motion.a>
-                  <motion.a href="https://www.linkedin.com/in/alex-emanuel/"
+                  {/* <motion.a href="https://www.linkedin.com/in/alex-emanuel/"
                     whileHover={{ x: 1.5, y: -3 }}
                     transition={{ type: "ease", stiffness: 400 }}
                   >
                     <i className="fa-brands fa-github"></i>
                     @Alex-Emanuel
-                  </motion.a>
+                  </motion.a> */}
               </div>
             </motion.div>
             <motion.div ref={formRef} style={{ opacity, y }} className="form">

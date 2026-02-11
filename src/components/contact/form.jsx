@@ -33,10 +33,10 @@ const Form = () => {
     }
   }, [errors, lenisRef]);
 
-  // Verberg snackbar na 3 seconden automatisch
+  // Verberg snackbar na 3 seconden
   useEffect(() => {
     if (snackbar.show) {
-      const timer = setTimeout(() => setSnackbar({ ...snackbar, show: false }), 10000);
+      const timer = setTimeout(() => setSnackbar({ ...snackbar, show: false }), 3000);
       return () => clearTimeout(timer);
     }
   }, [snackbar]);
