@@ -131,7 +131,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <img src='/me.png' alt="Alex Emanuel portret"/>
+      <img src='./me.png' alt="Alex Emanuel portret"/>
 
       <div className="scrollblob">
         <a href="#me" onClick={scrollToMe}>
