@@ -15,13 +15,30 @@ const Form = () => {
 
   const onSubmit = async (data) => {
     try {
-      // Simuleer API call
-      await new Promise((resolve) => setTimeout(resolve, 2000));
-      
-      reset();
-      setSnackbar({ show: true, message: 'Bericht verzonden!', type: 'success' });
-    } catch (err) {
-      setSnackbar({ show: true, message: 'Fout! Probeer opnieuw.', type: 'error' });
+      const formData = new FormData();
+
+      Object.keys(data).forEach((key) => {
+        formData.append(key, data[key]);
+      });
+
+      formData.append("access_key", "83dc9ada-1fea-4205-91e8-fe79118186e6");
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        reset();
+        setSnackbar({ show: true, message: "Bericht verzonden!", type: "success" });
+      } else {
+        setSnackbar({ show: true, message: "Er ging iets mis.", type: "error" });
+      }
+
+    } catch (error) {
+      setSnackbar({ show: true, message: "Fout! Probeer opnieuw.", type: "error" });
     }
   };
 
