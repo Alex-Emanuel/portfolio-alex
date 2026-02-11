@@ -6,7 +6,7 @@ const projecten = [
     titel: "techx",
     uitleg: "Een Spring Boot web applicatie, gemaakt voor het beheer van een tech conference.",
     talen: "Spring Boot",
-    link: "https://github.com/Alex-Emanuel?tab=repositories",
+    link: "https://github.com/Alex-Emanuel/techx-2425",
     type: "dev",
   },
   {
