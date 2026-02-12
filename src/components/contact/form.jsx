@@ -6,7 +6,6 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const Form = () => {
   const { lenisRef } = useOutletContext();
-  // const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm();
   const { register, handleSubmit, formState: { errors, isSubmitting, isValid },  reset } = useForm({
     mode: "onChange"
   });
