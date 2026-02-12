@@ -80,7 +80,7 @@ const Me = () => {
         </p>
         <p>
           In mijn vrije tijd ben ik op vrijwillige basis <b>instructeur</b> bij hondenschool Action4Dogs, 
-          waar ik lesgeef aan baasjes en hun trouwe viervoeters. Als enthousiaste <b>hondenliefhebber</b> train en ga ik ook zelf regelmatig op pad met mijn {dogage} jaar oude Australische herder Vinny.
+          waar ik lesgeef aan baasjes en hun trouwe viervoeters. Als enthousiaste <b>hondenliefhebber</b> train en ga ik ook zelf regelmatig op pad met mijn {dogage}-jarige Australische herder Vinny.
         </p>
         <img ref={imgRef} src='./beach.jpg' alt="Alex wandelt met haar hond Vinny op het strand"/>
       </div>

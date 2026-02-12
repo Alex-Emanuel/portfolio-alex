@@ -20,7 +20,7 @@ const isTouchDevice = () => {
   return hasTouch && smallScreen;
 };
 
-const ProjectItem = ({ p, index, activeRow, setActiveRow, touch, columns }) => {
+const ProjectItem = ({ p, index, activeItem, setActiveItem, touch }) => {
   const itemRef = useRef(null);
   const [hover, setHover] = useState(false);
 
@@ -29,53 +29,81 @@ const ProjectItem = ({ p, index, activeRow, setActiveRow, touch, columns }) => {
     hover: { scaleY: 1 },
   };
 
-  const rowIndex = touch && columns ? Math.floor(index / columns) : null;
+  const active = touch ? activeItem === index : hover;
 
-  // Touchscreen ScrollTrigger
-  useGSAP(() => {
-    if (!touch || !itemRef.current) return;
+  const handleClick = () => {
+    if (!touch) return;
 
-    const trigger = ScrollTrigger.create({
-      trigger: itemRef.current,
-      scroller: ".website-content",
-      start: "top 65%",
-      end: "bottom 35%",
-      onEnter: () => setActiveRow(rowIndex),
-      onEnterBack: () => setActiveRow(rowIndex),
-    });
+    setActiveItem(active ? null : index);
+  };
 
-    return () => trigger.kill();
-  }, [touch, rowIndex]);
-
-  const active = touch
-    ? activeRow === rowIndex
-    : hover;
+  const handleClose = (e) => {
+    e.stopPropagation(); // voorkomt toggle van overlay
+    setActiveItem(null);
+  };
 
   return (
-    <motion.div ref={itemRef} className="project-item" animate={active ? "hover" : "rest"}
-      onHoverStart={!touch ? () => setHover(true) : undefined} onHoverEnd={!touch ? () => setHover(false) : undefined}
-      onClick={() => setActiveRow(rowIndex)} 
+    <motion.div
+      ref={itemRef}
+      className="project-item"
+      animate={active ? "hover" : "rest"}
+      onHoverStart={!touch ? () => setHover(true) : undefined}
+      onHoverEnd={!touch ? () => setHover(false) : undefined}
+      onClick={handleClick}
       style={{
         backgroundImage: `url(${p.img})`,
         gridArea: p.grid,
+        position: "relative",
+        cursor: "pointer",
       }}
     >
-      <motion.div className="project-overlay" variants={overlayVariants} transition={{ duration: 0.25, ease: "easeOut" }}>
+      {/* Altijd zichtbare titel bovenop afbeelding (voor mobiel/tablet) */}
+      {touch && (
+        <div className="project-title-overlay">
+          <p>{p.titel}</p>
+        </div>
+      )}
+
+      {/* Donkere overlay bij actieve project */}
+      <motion.div
+        className={`project-overlay ${active ? "active" : ""}`}
+        variants={overlayVariants}
+        transition={{ duration: 0.25, ease: "easeOut" }}
+      >
+        {/* Sluitknop voor touch devices */}
+        {touch && active && (
+          <button className="close-btn" onClick={handleClose}>
+            ✕
+          </button>
+        )}
+
         <p>{p.titel}</p>
         <p>{p.uitleg}</p>
+
         {p.team && p.team.length > 0 && (
           <p className='team'>
             Team:{" "}
             {p.team.map((lid, i) => (
               <span key={i}>
-                <a rel="noopener noreferrer" href={lid.linkedin}>{lid.naam}</a>
+                <a rel="noopener noreferrer" href={lid.linkedin} target="_blank"
+                  onClick={(e) => e.stopPropagation()}>
+                  {lid.naam}
+                </a>
                 {i < p.team.length - 1 ? ", " : ""}
               </span>
             ))}
           </p>
         )}
+
         <p className='talen'>{p.talen}</p>
-        <a href={p.link} target="_blank" className='direct' rel="noopener noreferrer">
+
+        <a
+          href={p.link}
+          target="_blank"
+          className='direct'
+          rel="noopener noreferrer"
+          onClick={(e) => e.stopPropagation()}
+        >
           {p.type === "dev" ? (
             <i className="fa-brands fa-github"></i>
           ) : (
@@ -88,33 +116,98 @@ const ProjectItem = ({ p, index, activeRow, setActiveRow, touch, columns }) => {
   );
 };
 
-const Projecten = () => {  
-  const getColumns = () => {
-    if (!isTouchDevice()) return null;
-    if (window.innerWidth >= 668) return 2;
-    return 1;
-  };
 
+// const ProjectItem = ({ p, index, activeItem, setActiveItem, touch }) => {
+//   const itemRef = useRef(null);
+//   const [hover, setHover] = useState(false);
+
+//   const overlayVariants = {
+//     rest: { scaleY: 0 },
+//     hover: { scaleY: 1 },
+//   };
+
+//   const active = touch ? activeItem === index : hover;
+
+//   const handleClick = () => {
+//     if (!touch) return;
+
+//     // Altijd maar één actief
+//     setActiveItem(active ? null : index);
+//   };
+
+//   return (
+//     <motion.div
+//       ref={itemRef}
+//       className="project-item"
+//       animate={active ? "hover" : "rest"}
+//       onHoverStart={!touch ? () => setHover(true) : undefined}
+//       onHoverEnd={!touch ? () => setHover(false) : undefined}
+//       onClick={handleClick}
+//       style={{
+//         backgroundImage: `url(${p.img})`,
+//         gridArea: p.grid,
+//       }}
+//     >
+//       <motion.div
+//         className="project-overlay"
+//         variants={overlayVariants}
+//         transition={{ duration: 0.25, ease: "easeOut" }}
+//       >
+//         <p>{p.titel}</p>
+//         <p>{p.uitleg}</p>
+
+//         {p.team && p.team.length > 0 && (
+//           <p className='team'>
+//             Team:{" "}
+//             {p.team.map((lid, i) => (
+//               <span key={i}>
+//                 <a rel="noopener noreferrer" href={lid.linkedin} target="_blank"
+//                   onClick={(e) => e.stopPropagation()}>
+//                   {lid.naam}
+//                 </a>
+//                 {i < p.team.length - 1 ? ", " : ""}
+//               </span>
+//             ))}
+//           </p>
+//         )}
+
+//         <p className='talen'>{p.talen}</p>
+
+//         <a
+//           href={p.link}
+//           target="_blank"
+//           className='direct'
+//           rel="noopener noreferrer"
+//           onClick={(e) => e.stopPropagation()}
+//         >
+//           {p.type === "dev" ? (
+//             <i className="fa-brands fa-github"></i>
+//           ) : (
+//             <i className="fa-solid fa-globe"></i>
+//           )}
+//           Bekijk de {p.type === "dev" ? "code" : "website"}
+//         </a>
+//       </motion.div>
+//     </motion.div>
+//   );
+// };
+
+const Projecten = () => {  
   const containerRef = useRef(null);
-  const [activeRow, setActiveRow] = useState(null);
-  const [columns, setColumns] = useState(getColumns());
+  const [activeItem, setActiveItem] = useState(null);
   const touch = isTouchDevice(); 
 
-  // animaties + scrolltriggers
   useGSAP(() => {
-    const onResize = () => setColumns(getColumns());
+    const onResize = () => {};
     window.addEventListener("resize", onResize);
-
     ScrollTrigger.refresh();
 
-    // Animatie headings + projectgrid
     if (containerRef.current) {
       gsap.fromTo(
         containerRef.current.querySelectorAll("h4, h2, .projectgrid"),
         { opacity: 0, y: 50 },
         { 
-          opacity: 1,
-          y: 0,
+          opacity: 1, y: 0, 
           duration: 1,
           ease: "power2.out",
           stagger: 0.2,
@@ -129,7 +222,6 @@ const Projecten = () => {
       );
     }
 
-    // cleanup
     return () => {
       window.removeEventListener("resize", onResize);
       ScrollTrigger.refresh();
@@ -142,13 +234,13 @@ const Projecten = () => {
       <h2>Enkele projecten</h2>
       <div className="projectgrid">
         {projecten.map((p, index) => (
-          <ProjectItem key={p.id} p={p}
-            index={index} activeRow={activeRow} setActiveRow={setActiveRow}
-            touch={touch} columns={columns} />
+          <ProjectItem key={p.id} p={p} index={index} activeItem={activeItem}
+            setActiveItem={setActiveItem} touch={touch}/>
         ))}
       </div>
     </div>
   )
 }
+
 
 export default Projecten;

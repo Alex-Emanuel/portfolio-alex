@@ -127,7 +127,7 @@
 
 .blob {
   width: 350px;
-  fill: var(--background-color);
+  color: var(--background-color);
   position: absolute;
   bottom: -19px;
   left: 50%;
@@ -166,8 +166,19 @@
 }
 
 
+@media (prefers-color-scheme: dark) {
+  .blob {
+    color: Canvas;   /* probeert te matchen met geforceerde zwart */
+  }
+}
 
-
+/* Als je forced colors actief is (werkt op sommige browsers) */
+@media (forced-colors: active) {
+  .blob {
+    color: Canvas;
+    forced-color-adjust: auto;  /* of none als je eigen kleur wilt forceren */
+  }
+}
 
 
 
