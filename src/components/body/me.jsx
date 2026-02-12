@@ -51,6 +51,21 @@ const Me = () => {
 
   }, []);
 
+  function berekenLeeftijd(geboortedatum) {
+    const vandaag = new Date();
+    const geboorte = new Date(geboortedatum);
+    let leeftijd = vandaag.getFullYear() - geboorte.getFullYear();
+    const maandVerschil = vandaag.getMonth() - geboorte.getMonth();
+    const dagVerschil = vandaag.getDate() - geboorte.getDate();
+
+    if (maandVerschil < 0 || (maandVerschil === 0 && dagVerschil < 0)) {
+      leeftijd--;
+    }
+    return leeftijd;
+  }
+
+  const dogage = berekenLeeftijd("2022-09-03");
+
   return (
     <div className='content-body' ref={containerRef}>
       <h4 id='me'>Wie ben ik</h4>
@@ -65,7 +80,7 @@ const Me = () => {
         </p>
         <p>
           In mijn vrije tijd ben ik op vrijwillige basis <b>instructeur</b> bij hondenschool Action4Dogs, 
-          waar ik lesgeef aan baasjes en hun trouwe viervoeters. Als enthousiaste <b>hondenliefhebber</b> train en ga ik ook zelf regelmatig op pad met mijn driejarige Australische herder Vinny.
+          waar ik lesgeef aan baasjes en hun trouwe viervoeters. Als enthousiaste <b>hondenliefhebber</b> train en ga ik ook zelf regelmatig op pad met mijn {dogage} jaar oude Australische herder Vinny.
         </p>
         <img ref={imgRef} src='./beach.jpg' alt="Alex wandelt met haar hond Vinny op het strand"/>
       </div>

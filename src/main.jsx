@@ -21,9 +21,9 @@ const router = createBrowserRouter(
       ],
     },
   ],
-  {
-    basename: '/portfolio-alex'
-  }
+  // {
+  //   basename: '/portfolio-alex'
+  // }
 );
 
 createRoot(document.getElementById('root')).render(
