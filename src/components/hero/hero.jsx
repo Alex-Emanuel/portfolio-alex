@@ -113,7 +113,7 @@ const Hero = () => {
             </motion.a>
 
             <motion.a className="download" download
-              href="/cv-alex-emanuel.pdf" whileHover="hover" 
+              href="/cv-alex-emanuel-2026.pdf" whileHover="hover" 
               initial="rest" animate="rest"
             >
               <motion.span

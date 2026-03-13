@@ -255,6 +255,7 @@ button.inactive:hover {
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
+  cursor: default !important;
 }
 
 .project-overlay {
