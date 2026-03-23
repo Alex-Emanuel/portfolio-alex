@@ -113,7 +113,7 @@ const Hero = () => {
             </motion.a>
 
             <motion.a className="download" download
-              href="/cv-alex-emanuel-2026.pdf" whileHover="hover" 
+              href="/cv-alex-emanuel.pdf" whileHover="hover" 
               initial="rest" animate="rest"
             >
               <motion.span
@@ -147,7 +147,7 @@ const Hero = () => {
   <g>
     <path
       className="cls-1"
-      fill="currentColor"   // ← dit toevoegen!
+      fill="#141412"
       d="M248.56,59.03v13.15H0v-13.15s.92.03,2.58,0c10.75-.19,52.3-2.85,72.08-32.29,1.15-1.7,2.39-3.28,3.7-4.78C89.19,8.57,105.73,0,124.28,0s35.1,8.57,45.92,21.95c1.31,1.5,2.55,3.08,3.7,4.78,19.78,29.44,61.33,32.11,72.08,32.29,1.66.03,2.58,0,2.58,0Z"
     />
   </g>

@@ -30,7 +30,7 @@ const opleiding = [
     titel: "Toegepaste Informatica",
     subtitel: "Professionele bachelor",
     uitleg: "HOGENT, Gent",
-    specialisatie: "Full-stack developer"
+    specialisatie: "Full stack developer"
   }
 ];
 
