@@ -22,26 +22,28 @@ const vaardigheden = [
       { id: 5, naam: "CSS", icon: "cibCss3Shiled" },
       { id: 6, naam: "Python", icon: "cibPython" },
       { id: 7, naam: "C#", icon: "cibC" },
-      
+      { id: 8, naam: "PHP", icon: "cibPhp" },
+
       // Frontend
-      { id: 8, naam: "React", icon: "cibReact" },
-      { id: 9, naam: "Tailwind CSS", icon: "cibCsswizardry" },
-      { id: 10, naam: "Blazor WebAssembly", icon: "cilLayers" },
-      
+      { id: 9, naam: "React", icon: "cibReact" },
+      { id: 10, naam: "Tailwind CSS", icon: "cibCsswizardry" },
+      { id: 11, naam: "Blazor WebAssembly", icon: "cilLayers" },
+
       // Backend
-      { id: 11, naam: "Node.js", icon: "cibNodeJs" },
-      { id: 12, naam: "Spring Boot", icon: "cibSpring" },
-      { id: 13, naam: ".NET", icon: "cibDotNet" },
-      
+      { id: 12, naam: "Node.js", icon: "cibNodeJs" },
+      { id: 13, naam: "Spring Boot", icon: "cibSpring" },
+      { id: 14, naam: ".NET", icon: "cibDotNet" },
+      { id: 15, naam: "Laravel", icon: "cibLaravel" },
+
       // Databases
-      { id: 14, naam: "MySQL", icon: "cibMysql" },
-      { id: 15, naam: "MongoDB", icon: "cibMongodb" },
-      { id: 16, naam: "Redis", icon: "cibRedis" },
-      { id: 17, naam: "Neo4j", icon: "cibNeo4j" },
-      
+      { id: 16, naam: "MySQL", icon: "cibMysql" },
+      { id: 17, naam: "MongoDB", icon: "cibMongodb" },
+      { id: 18, naam: "Redis", icon: "cibRedis" },
+      { id: 19, naam: "Neo4j", icon: "cibNeo4j" },
+
       // Tools
-      { id: 18, naam: "Git", icon: "cibGit" },
-      { id: 19, naam: "GitHub", icon: "cibGithub" },
+      { id: 20, naam: "Git", icon: "cibGit" },
+      { id: 21, naam: "GitHub", icon: "cibGithub" },
     ],
   },
   {

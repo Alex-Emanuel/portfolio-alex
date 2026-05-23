@@ -22,17 +22,17 @@ const ervaring = [
   },
   {
     id: 3,
+    datum: "02.2026 - 05.2026",
+    titel: "Stagiaire Fullstack Development",
+    subtitel: "IT1 (WEBRAND)",
+    uitleg: "Stagiaire UX-driven Fullstack Development bij IT1 binnen de divisie WEBRAND. Analyse en optimalisatie van webapplicaties met focus op UX en fullstack development in Laravel.",
+  },
+  {
+    id: 4,
     datum: "07.2024 - Heden",
     titel: "Instructeur gehoorzaamheid",
     subtitel: "Hondenschool Action4Dogs",
     uitleg: "Geeft zowel individueel als in teamverband les aan baasjes. Begeleidt hen bij het aanleren van basiscommando's en het begrijpen van hondentaal.",
-  },
-  {
-    id: 3,
-    datum: "02.2026 - Heden",
-    titel: "Stagiaire Fullstack Development",
-    subtitel: "IT1 (WEBRAND)",
-    uitleg: "Stagiaire UX-driven Fullstack Development bij IT1 binnen de divisie WEBRAND. Analyse en optimalisatie van webapplicaties met focus op UX en fullstack development in Laravel.",
   }
   //Stagiaire | IT1 (WEBRAND), Dendermonde
 ];
