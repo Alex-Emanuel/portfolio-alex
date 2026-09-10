@@ -72,10 +72,10 @@ const Me = () => {
       <h2>Even kennismaken</h2>
       <div className='maxwidthcontent me'>
         <p>
-          Ik ben een leergierige laatstejaarsstudent <b>Toegepaste Informatica</b> aan HOGENT, 
+          Ik ben een jonge professional die pas is afgestudeerd in de <b>Toegepaste Informatica</b> aan HOGENT, 
           met een achtergrond in <b>Grafische en Digitale Media</b>. Ik heb een passie voor design, 
           coderen en programmeren en wil van deze combinatie mijn beroep maken. 
-          Altijd op zoek naar groei combineer ik creativiteit met oog voor detail om innovatieve, 
+          Altijd op zoek naar groei, combineer ik creativiteit met oog voor detail om innovatieve, 
           gebruiksvriendelijke oplossingen te creëren.
         </p>
         <p>

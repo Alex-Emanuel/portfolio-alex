@@ -26,11 +26,12 @@ const opleiding = [
   },
   {
     id: 4,
-    datum: "09.2023 - Heden",
+    datum: "09.2023 - 09.2026",
     titel: "Toegepaste Informatica",
     subtitel: "Professionele bachelor",
     uitleg: "HOGENT, Gent",
-    specialisatie: "Full stack developer"
+    specialisatie: "Full stack development",
+    extra: "Met grootste onderscheiding",
   }
 ];
 
